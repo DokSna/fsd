@@ -4,7 +4,8 @@
   "description": "Вёрстка сайта по поиску номеров в отеле.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",

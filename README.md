@@ -60,4 +60,22 @@
 				</p>
 			</details>
 		</li>
+		<li>
+			В package.json добавим два ярлыка - для запуска webpack в режиме Devrlopment и Production
+			<details>
+				<summary>
+					подробнее
+				</summary>
+				<p><code><pre>
+					"scripts": {
+						"dev": "webpack-dev-server --mode development --open",
+						"build": "webpack --mode production"
+					}					
+				</pre></code>
+					Для запуска webpack в режиме Devrlopment набрать в консоли: npm run dev <br>
+					Для запуска в режиме Production набрать в консоли: npm run build
+				</p>
+			</details>
+		</li>
+
 </ol>

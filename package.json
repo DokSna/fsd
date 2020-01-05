@@ -1,0 +1,24 @@
+{
+  "name": "fsd-step-2",
+  "version": "1.0.0",
+  "description": "Вёрстка сайта по поиску номеров в отеле.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DokSna/fsd-step-2.git"
+  },
+  "keywords": [
+    "webpack",
+    "pug",
+    "scss"
+  ],
+  "author": "Artem Valikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DokSna/fsd-step-2/issues"
+  },
+  "homepage": "https://github.com/DokSna/fsd-step-2#readme"
+}

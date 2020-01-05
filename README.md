@@ -48,7 +48,8 @@
 					<br>
 					По умолчанию установилось бы в "Dependencies" - то что относится в продакшену. <br>
 					После установки пакетов появилась папка node_modules (в ней Javascript-библиотеки), а в файл package.json
-					внесена запись: <br>
+					внесена запись:
+				</p>
 					<code><pre>
 "devDependencies": {
 	"path": "^0.12.7",
@@ -56,8 +57,7 @@
 	"webpack-cli": "^3.3.10",
 	"webpack-dev-server": "^3.10.1"
 }
-					</pre></code>
-				</p>
+					</pre></code>				
 			</details>
 		</li>
 		<li>
@@ -66,16 +66,33 @@
 				<summary>
 					подробнее
 				</summary>
-				<p><code><pre>
-					"scripts": {
-						"dev": "webpack-dev-server --mode development --open",
-						"build": "webpack --mode production"
-					}					
+				<code><pre>
+"scripts": {
+	"dev": "webpack-dev-server --mode development --open",
+	"build": "webpack --mode production"
+}					
 				</pre></code>
+				<p>
 					Для запуска webpack в режиме Devrlopment набрать в консоли: npm run dev <br>
 					Для запуска в режиме Production набрать в консоли: npm run build
 				</p>
 			</details>
+		</li>
+		<li>
+			Переходим к настройкам Webpack - создадим файл webpack.config.js <br>
+			В webpack.config.js описываем точку входа entry, и описываем путь к файлу ./src/index.js <br>
+			Создаём папку src и файл index.js (в index.js мы будем подключать все наши библиотеки) <br>
+			Так же в файле webpack.config.js описываем точку выхода output <br>
+			Для devServer укажем overlay: true что бы отображались ошибки в окне браузера
+			<details>
+				<summary>
+					подробнее
+				</summary>
+				<p>
+					В файле webpack.config.js мы будем описывать конфигурации нашего Webpack
+				</p>
+			</details>
+
 		</li>
 
 </ol>

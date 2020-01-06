@@ -127,9 +127,16 @@
     import './js/common'
     ```
 
-    src\js\common.js
+    **src\js\common.js**
     ```js
     let add = (a,b) => a+b
     console.log(add(2,6))
     ```
     </details>
+7. Что бы код написанный на современном языке работал во всех браузерах установим [Babel](https://babeljs.io/) - он преобразует современный синтаксис в "устаревший" что бы его понимали старые браузеры, которые не поддерживают новые стандарты.
+
+    Команда: `npm install @babel/core @babel/preset-env babel-loader —save-dev`
+
+    Устанавливаем Vue: `npm install vue --save`
+
+    Подключаем в **index.js** добавляя строку `window.Vue = require('vue')`

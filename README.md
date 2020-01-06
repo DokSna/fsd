@@ -36,9 +36,9 @@
 
     Вводим в консоль: `npm install webpack webpack-cli webpack-dev-server path --save-dev`
 
-    Папка "node*modules" содержит очень много файлов, и смысла её коммитить нет.
+    Папка "node_modules" содержит очень много файлов, и смысла её коммитить нет.
 
-    Открываем файл `Наш_проект\.git\info\exclude` и в конце добавляем `строку node_modules/`
+    Открываем файл `Наш_проект\.git\info\exclude` и в конце добавляем строку `node_modules/`
     <details><summary>подробнее</summary>
 
     `--save-dev` - что бы в файле package.json, webpack был помещён в `devDependencies` - то что относится к
@@ -75,17 +75,61 @@
 
     </details>
 
-5. Переходим к настройкам Webpack - создадим файл `webpack.config.js`
+5. Переходим к настройкам Webpack - создадим файл **webpack.config.js**
 
    В **webpack.config.js** описываем точку входа entry, и описываем путь к файлу `./src/index.js`
 
    Создаём папку **src** и файл **index.js** (в index.js мы будем подключать все наши библиотеки)
 
-   Так же в файле *webpack.config.js* описываем точку выхода `output`
+   Так же в файле **webpack.config.js** описываем точку выхода `output`
 
    Для *devServer* укажем `overlay: true` что бы отображались ошибки в окне браузера
-  <details><summary>подробнее</summary>
+    <details><summary>подробнее</summary>
 
-  В файле webpack.config.js мы будем описывать конфигурации нашего Webpack
+    В файле **webpack.config.js** мы будем описывать конфигурации нашего Webpack
 
-  </details>
+    </details>
+
+6. Создадим 2 файла: **index.html**, **./src/js/common.js**
+
+    В **./src/js/common.js** опишем простую функцию сложения для проверки.
+
+    В **index.html** вызовем эту функцию.
+
+    В **index.js** импортируем код из **./src/js/common.js**
+
+    При команде `npm run dev` Webpack в памяти компилирует проект, и не записывая файлов на диск выдаёт результат.
+
+    При команде `npm run build` Webpack компилирует папку **dist** в корне проекта и файлы в ней (в том числе **app.js** *точка выхода*).
+    <details><summary>подробнее</summary>
+
+    **index.html**
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Webpack</title>
+    </head>
+    <body>
+      <div class="wrapper">
+        <h1>Webpack</h1>
+      </div>
+      <script src="/dist/app.js"></script>
+    </body>
+    </html>
+    ```
+
+    **src\index.js**
+    ```js
+    import './js/common'
+    ```
+
+    src\js\common.js
+    ```js
+    let add = (a,b) => a+b
+    console.log(add(2,6))
+    ```
+    </details>

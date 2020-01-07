@@ -149,3 +149,5 @@
 1. Создание scss и css папок в webpack
 
 2. Установка mini-css-extract-plugin
+
+3. Webpack 4 SASS. Обработка

@@ -163,3 +163,5 @@
 3. Webpack обработка изображений. Подключаем file-loader
 
 4. Устновка и настройка copy-webpack-plugin
+
+5. Установка и настройка html-webpack-plugin в webpack 4

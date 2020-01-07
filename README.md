@@ -153,3 +153,7 @@
 3. Webpack 4 SASS. Обработка
 
 4. Настройка и установка postcss плагинов
+
+#### [Обработка файлов, настройка webpack-merge и copy-webpack-plugin](https://tocode.ru/curses/nastroika-webpack4/obrabotka-failov-nastroika-merge)
+
+1. Webpack-merge

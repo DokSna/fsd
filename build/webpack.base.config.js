@@ -2,6 +2,7 @@ const path = require('path')	//используем path, что бы прави
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {	//сдесь будем экспортировать наши настройки
 	entry: {	//задаём точку входа
@@ -57,7 +58,16 @@ module.exports = {	//сдесь будем экспортировать наши
 					options: { sourceMap: true }
 				}
 			]
-		}
+		},
+		{
+			test: /\.vue$/,
+			loader: 'vue-loader',
+			options: {
+				loader: {
+					scss: 'vue-style-loader!css-loader!sass-loader'
+				}
+			}
+		},
 		]
 	},
 
@@ -78,6 +88,7 @@ module.exports = {	//сдесь будем экспортировать наши
 			template: './src/index.html',
 			filename: 'index.html',
 		}),
+		new VueLoaderPlugin(),
 	],
 }
 

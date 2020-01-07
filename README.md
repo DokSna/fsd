@@ -169,3 +169,7 @@
 #### [Подключение и использование VUE и VUEX](https://tocode.ru/curses/nastroika-webpack4/podkluchenie-vue-vuex)
 
 1. Webpack обработка .vue файлов
+
+2. Плагин VueLoaderPlugin
+
+3. Подключение vue компонентов

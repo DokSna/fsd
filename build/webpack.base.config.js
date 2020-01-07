@@ -9,10 +9,23 @@ module.exports = {	//сдесь будем экспортировать наши
 		app: './src/index.js'	//описываем путь к входному файлу js-скрипта
 	},
 	output: {	//точка выхода
-		filename: '[name].js',
+		filename: '[name].[hash].js',
 		path: path.resolve(__dirname, './dist'),	//путь, сдесь будем использовать пакет "path": "^0.12.7" - объявим его в константу в начале файла
 		//передаём два параметра - говорим что в корне проекта нужно создавать папку dist
 		publicPath: '/dist' //publicPath задаём для Dev-сервера что бы он корректно работал
+	},
+
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					name: 'vendors',
+					test: /node_modules/,
+					chunks: 'all',
+					enforce: true
+				}
+			}
+		}
 	},
 
 	module: {
@@ -77,7 +90,7 @@ module.exports = {	//сдесь будем экспортировать наши
 
 	plugins: [
 		new MiniCssExtractPlugin({
-			filename: "[name].css",
+			filename: "[name].[hash].css",
 		}),
 		new CopyWebpackPlugin([
 			{ from: PATHS.src + '/img', to: `img` },

@@ -165,3 +165,7 @@
 4. Устновка и настройка copy-webpack-plugin
 
 5. Установка и настройка html-webpack-plugin в webpack 4
+
+#### [Подключение и использование VUE и VUEX](https://tocode.ru/curses/nastroika-webpack4/podkluchenie-vue-vuex)
+
+1. Webpack обработка .vue файлов

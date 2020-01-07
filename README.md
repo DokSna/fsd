@@ -8,6 +8,8 @@
 
 ### Настраиваем Webpack
 
+#### [Настройка Webpack 4 шаблона. Установка Babel 7 и webpack dev server. Настройка js на примере vue](https://tocode.ru/curses/nastroika-webpack4/js-babel7-webpack-dev-server/)
+
 1.  Скачиваем и устанавливаем [Node.js](https://nodejs.org/en/).
     <details><summary>подробнее</summary>
     После установки Node.js - нам доступна команда "npm" в консоли (Node Package Manager). Позволяет устанавливать Javascript-библиотеки из сети Интернет.
@@ -140,3 +142,10 @@
     Устанавливаем Vue: `npm install vue --save`
 
     Подключаем в **index.js** добавляя строку `window.Vue = require('vue')`
+
+***
+#### [Настройка препроцессора SASS, подключение postcss плагинов](https://tocode.ru/curses/nastroika-webpack4/preprocessor-sass-postcss/)
+
+1. Создание scss и css папок в webpack
+
+2. Установка mini-css-extract-plugin

@@ -1,4 +1,5 @@
 import './js/common'
+import './css/main.css'
 
 // // JS - ./js/index.js
 // import './js/'

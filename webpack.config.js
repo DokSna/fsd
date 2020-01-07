@@ -1,4 +1,5 @@
 const path = require('path')	//используем path, что бы правильно сформировать абсолютный путь к корню проекта
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {	//сдесь будем экспортировать наши настройки
 	entry: {	//задаём точку входа
@@ -15,9 +16,21 @@ module.exports = {	//сдесь будем экспортировать наши
 			test: /\.js$/,
 			loader: 'babel-loader',
 			exclude: '/node_modules/'
-		}]
+		},
+		{
+			test: /\.css$/i,
+			use: [MiniCssExtractPlugin.loader, 'css-loader'],
+		},
+		]
 	},
+
 	devServer: {	//настройки для нашего Dev-сервера
 		overlay: true	// что бы ошибки отображались не в консоли, а в окне браузера (на тёмном фоне) и указывать то место где возникла ошибка
-	}
+	},
+
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "[name].css",
+		})
+	],
 }

@@ -157,3 +157,9 @@
 #### [Обработка файлов, настройка webpack-merge и copy-webpack-plugin](https://tocode.ru/curses/nastroika-webpack4/obrabotka-failov-nastroika-merge)
 
 1. Webpack-merge
+
+2. Webpack devtool - карта для нашего CSS
+
+3. Webpack обработка изображений. Подключаем file-loader
+
+4. Устновка и настройка copy-webpack-plugin

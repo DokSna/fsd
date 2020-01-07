@@ -1,5 +1,6 @@
 const path = require('path')	//используем path, что бы правильно сформировать абсолютный путь к корню проекта
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {	//сдесь будем экспортировать наши настройки
 	entry: {	//задаём точку входа
@@ -33,6 +34,13 @@ module.exports = {	//сдесь будем экспортировать наши
 			]
 		},
 		{
+			test: /\.(png|jpg|gif|svg)$/,
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]',
+			}
+		},
+		{
 			test: /\.scss$/,
 			use: [
 				'style-loader',
@@ -59,6 +67,12 @@ module.exports = {	//сдесь будем экспортировать наши
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "[name].css",
-		})
+		}),
+		new CopyWebpackPlugin([
+			{ from: PATHS.src + '/img', to: `img` },
+			{ from: PATHS.src + '/static' },
+		]),
 	],
 }
+
+

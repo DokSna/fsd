@@ -151,3 +151,5 @@
 2. Установка mini-css-extract-plugin
 
 3. Webpack 4 SASS. Обработка
+
+4. Настройка и установка postcss плагинов

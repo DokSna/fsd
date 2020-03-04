@@ -14,6 +14,6 @@
 ### Действия
 
 #### Команды
->npm init
+`npm init`
 
->npm install webpack webpack-cli webpack-dev-server path --save-dev
+`npm install webpack webpack-cli webpack-dev-server path --save-dev`

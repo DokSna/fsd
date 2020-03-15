@@ -18,3 +18,5 @@
 `npm init`
 
 `npm install webpack webpack-cli webpack-dev-server path --save-dev`
+
+`npm install @babel/core @babel/preset-env babel-loader --save-dev`

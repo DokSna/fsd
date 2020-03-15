@@ -22,3 +22,9 @@
 `npm install @babel/core @babel/preset-env babel-loader --save-dev`
 
 `npm install vue --save-dev`
+
+`npm install css-loader mini-css-extract-plugin --save-dev`
+
+`npm install style-loader sass-loader node-sass --save-dev`
+
+`npm install postcss-loader autoprefixer css-mqpacker cssnano --save-dev`

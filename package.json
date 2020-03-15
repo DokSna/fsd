@@ -1,0 +1,27 @@
+{
+  "name": "fsd-step-2",
+  "version": "1.0.0",
+  "description": "exercise for frontend  developer",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DokSna/fsd-step-2.git"
+  },
+  "author": "Artem Valikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DokSna/fsd-step-2/issues"
+  },
+  "homepage": "https://github.com/DokSna/fsd-step-2#readme",
+
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

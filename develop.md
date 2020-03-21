@@ -30,3 +30,9 @@
 `npm install postcss-loader autoprefixer css-mqpacker cssnano --save-dev`
 
 `npm install --save-dev webpack-merge`
+
+`npm install --save-dev file-loader`
+
+`npm install copy-webpack-plugin --save-dev`
+
+`npm install html-webpack-plugin --save-dev`

@@ -1,10 +1,24 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const PATHS = {
+  src: path.join(__dirname, './src'),
+  dist: path.join(__dirname, './dist'),
+  assets: '/assets'
+}
+
 module.exports = {
-  entry: {
-    app: './src/index.js'
+  externals: {
+    paths: PATHS
   },
+
+  entry: {
+    app: PATHS.src
+  },
+  // entry: {
+  //   app: './src/index.js'
+  // },
+
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, './dist'),
@@ -45,9 +59,6 @@ module.exports = {
         }
       ]
     }]
-  },
-  devServer: {
-    overlay: true
   },
   plugins: [
     new MiniCssExtractPlugin({

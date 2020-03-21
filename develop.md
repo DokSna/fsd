@@ -28,3 +28,5 @@
 `npm install style-loader sass-loader node-sass --save-dev`
 
 `npm install postcss-loader autoprefixer css-mqpacker cssnano --save-dev`
+
+`npm install --save-dev webpack-merge`

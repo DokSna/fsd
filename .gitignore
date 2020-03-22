@@ -1,6 +1,8 @@
 # Node
 node_modules
 
-# Dist & test
-test
+# Dist
 dist
+
+# Files
+package-lock.json

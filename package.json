@@ -1,0 +1,29 @@
+{
+  "name": "fsd-step-2",
+  "version": "1.0.0",
+  "description": "hotel room search",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --mode development",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DokSna/fsd-step-2.git"
+  },
+  "author": "Artem Valikov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DokSna/fsd-step-2/issues"
+  },
+  "homepage": "https://github.com/DokSna/fsd-step-2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "path": "^0.12.7",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

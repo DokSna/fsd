@@ -37,3 +37,7 @@
 `npm install copy-webpack-plugin --save-dev`
 
 `npm install html-webpack-plugin --save-dev`
+
+`npm i vue-loader vue-style-loader vue-template-compiler --save-dev`
+
+`npm i vue vuex --save`

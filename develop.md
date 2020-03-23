@@ -11,6 +11,7 @@
 * [Набор лучших практик для нашего проекта](https://github.com/fullstack-development/front-end-best-practices)
 * [Макет страниц по поиску номеров в отеле](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/)
 * [Установка и настройка Webpack](https://tocode.ru/curses/nastroika-webpack4/)
+* [postcss-plugins](https://github.com/postcss/postcss#plugins)
 
 ### Действия
 

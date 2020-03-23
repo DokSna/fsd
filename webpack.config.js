@@ -19,12 +19,6 @@ module.exports = {
 			loader: 'babel-loader',
 			exclude: '/node_modules/'
 		}, {
-			test: /\.css$/,
-			use: [
-				MiniCssExtractPlugin.loader,
-				"css-loader"
-			]
-		}, {
 			test: /\.scss$/,
 			use: [
 				'style-loader',
@@ -33,12 +27,27 @@ module.exports = {
 					loader: 'css-loader',
 					options: { sourceMap: true }
 				}, {
+					loader: 'postcss-loader',
+					options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+				}, {
 					loader: 'sass-loader',
 					options: { sourceMap: true }
 				}
 			]
-		}
-		]
+		}, {
+			test: /\.css$/,
+			use: [
+				'style-loader',
+				MiniCssExtractPlugin.loader,
+				{
+					loader: 'css-loader',
+					options: { sourceMap: true }
+				}, {
+					loader: 'postcss-loader',
+					options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+				}
+			]
+		}]
 	},
 
 	devServer: {

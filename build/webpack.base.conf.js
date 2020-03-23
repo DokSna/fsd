@@ -21,7 +21,8 @@ module.exports = {
 	},
 
 	output: {
-		filename: `${PATHS.assets}js/[name].[hash].js`,
+		filename: `${PATHS.assets}js/[name].js`,						//без хеша
+		// filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
 		path: PATHS.dist,
 		publicPath: '/'
 		// filename: '[name].js',
@@ -50,7 +51,8 @@ module.exports = {
 					options: { sourceMap: true }
 				}, {
 					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+					options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
+					// options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
 				}, {
 					loader: 'sass-loader',
 					options: { sourceMap: true }
@@ -66,7 +68,8 @@ module.exports = {
 					options: { sourceMap: true }
 				}, {
 					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+					options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
+					// options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
 				}
 			]
 		}]
@@ -79,7 +82,8 @@ module.exports = {
 	plugins: [
 
 		new MiniCssExtractPlugin({
-			filename: `${PATHS.assets}css/[name].[hash].css`,
+			filename: `${PATHS.assets}css/[name].css`,						//без хеша
+			// filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
 		// Copy HtmlWebpackPlugin and change index.html for another html page

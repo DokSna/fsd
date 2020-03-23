@@ -12,13 +12,15 @@
 
 	<div class="wrapper">
 		<div id="app">
-			<header></header>
+			<header>
+				<button @click="component = !component">Show Vue component</button>
+			</header>
 
 			<h1>Webpack</h1>
 			<img src="/assets/img/dog.jpg" alt="dog">
 
 			<footer>
-				<example-component></example-component>
+				<example-component v-if="component"></example-component>
 			</footer>
 		</div>
 	</div>

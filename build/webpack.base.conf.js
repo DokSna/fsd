@@ -22,8 +22,8 @@ module.exports = {
 	},
 
 	output: {
-		filename: `${PATHS.assets}js/[name].js`,						//без хеша
-		// filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
+		// filename: `${PATHS.assets}js/[name].js`,			//без хеша
+		filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
 		path: PATHS.dist,
 		publicPath: '/'
 		// filename: '[name].js',
@@ -31,6 +31,19 @@ module.exports = {
 		// publicPath: '/dist'
 	},
 
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: 'vendors',
+          test: /node_modules/,
+          chunks: 'all',
+          enforce: true
+        }
+      }
+    }
+	},
+	
 	module: {
 		rules: [{
 			test: /\.js$/,
@@ -98,16 +111,16 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin({
-			filename: `${PATHS.assets}css/[name].css`,						//без хеша
-			// filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
+			// filename: `${PATHS.assets}css/[name].css`,			//без хеша
+			filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
 		// Copy HtmlWebpackPlugin and change index.html for another html page
 		new HtmlWebpackPlugin({
-			hash: false,
+			// hash: false,
 			template: `${PATHS.src}/index.html`,
 			filename: './index.html',
-			inject: true
+			inject: true		//авто вставка стилей на страницу
 		}),
 		// new HtmlWebpackPlugin({
 		//   hash: false,

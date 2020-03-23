@@ -1,16 +1,32 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
+const PATHS = {
+	src: path.join(__dirname, '../src'),
+	dist: path.join(__dirname, '../dist'),
+	assets: 'assets/'
+}
 
 module.exports = {
 
+	externals: {		//с помощью externals, для PATHS создаём ярлык paths,
+		paths: PATHS	//что бы обращаться к нему в других конфигах можно было.
+	},
+
 	entry: {
-		app: './src/index.js'
+		app: PATHS.src
+		// app: './src/index.js'
 	},
 
 	output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, '../dist'),
-		publicPath: '/dist'
+		filename: `${PATHS.assets}js/[name].[hash].js`,
+		path: PATHS.dist,
+		publicPath: '/'
+		// filename: '[name].js',
+		// path: path.resolve(__dirname, '../dist'),
+		// publicPath: '/dist'
 	},
 
 	module: {
@@ -61,9 +77,32 @@ module.exports = {
 	// },
 
 	plugins: [
-		new MiniCssExtractPlugin({
-			filename: "[name].css"
-		})
-	],
 
+		new MiniCssExtractPlugin({
+			filename: `${PATHS.assets}css/[name].[hash].css`,
+		}),
+
+		// Copy HtmlWebpackPlugin and change index.html for another html page
+		new HtmlWebpackPlugin({
+			hash: false,
+			template: `${PATHS.src}/index.html`,
+			filename: './index.html',
+			inject: true
+		}),
+		// new HtmlWebpackPlugin({
+		//   hash: false,
+		//   template: './src/index.html',
+		//   filename: 'index.html',
+		// }),
+
+		new CopyWebpackPlugin([
+			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+			{ from: `${PATHS.src}/static`, to: '' },
+		]),
+		// new CopyWebpackPlugin([
+		// 	{ from: PATHS.src + '/img', to: `img` },
+		// 	{ from: PATHS.src + '/static' },
+		// ]),
+	],
 }

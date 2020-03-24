@@ -2,7 +2,8 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')	//VueLoaderPlugin поместили в объект {}, возможно в будущем пригодится ещё какойнибудь плагин из 'vue-loader'
+const { VueLoaderPlugin } = require('vue-loader')	//VueLoaderPlugin поместили в объект {}, 
+																									//возможно в будущем пригодится ещё какойнибудь плагин из 'vue-loader'
 
 const PATHS = {
 	src: path.join(__dirname, '../src'),
@@ -17,8 +18,9 @@ module.exports = {
 	},
 
 	entry: {
-		app: PATHS.src
 		// app: './src/index.js'
+		app: PATHS.src,		
+		// lk: `${PATHS.src}/lk.js`	//вторая точка входа, например для личного кабинета, или что бы разделить основной файл js если он большой
 	},
 
 	output: {
@@ -31,19 +33,19 @@ module.exports = {
 		// publicPath: '/dist'
 	},
 
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: 'vendors',
-          test: /node_modules/,
-          chunks: 'all',
-          enforce: true
-        }
-      }
-    }
+	optimization: {
+		splitChunks: {
+			cacheGroups: {
+				vendor: {
+					name: 'vendors',
+					test: /node_modules/,
+					chunks: 'all',
+					enforce: true
+				}
+			}
+		}
 	},
-	
+
 	module: {
 		rules: [{
 			test: /\.js$/,

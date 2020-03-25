@@ -158,20 +158,25 @@ module.exports = {
       Best way to create pages:
       https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     */
-		...PAGES.map(
-			page =>
-				new HtmlWebpackPlugin({
-					template: `${PAGES_DIR}/${page}`,
-					filename: `./${page}`
-				})
-		),
+		// ...PAGES.map(
+		// 	page =>
+		// 		new HtmlWebpackPlugin({
+		// 			template: `${PAGES_DIR}/${page}`,
+		// 			filename: `./${page}`
+		// 		})
+		// ),
 
 		// Второй способ - ручной (можно легко связывать с первым способом)
-		// new HtmlWebpackPlugin({
-		//   template: `${PAGES_DIR}/about/index.pug`,
-		//   filename: './about/index.html',
-		//   inject: true
-		// }),
+		new HtmlWebpackPlugin({
+		  template: `${PAGES_DIR}/html/index.html`,	//откуда и какой файл копируем (из src/html/)
+		  filename: './index.html',		//куда копируем - в корень проекта (папка dist)
+		  inject: true
+		}),
+		new HtmlWebpackPlugin({
+		  template: `${PAGES_DIR}/html/about.html`,	//откуда и какой файл копируем (из src/html/)
+		  filename: './mega.html',		//куда копируем - в корень проекта (папка dist)
+		  inject: true
+		}),
 		// new HtmlWebpackPlugin({
 		//   template: `${PAGES_DIR}/about/portfolio.pug`,
 		//   filename: './about/portfolio.html',

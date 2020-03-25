@@ -41,3 +41,5 @@
 `npm i vue-loader vue-style-loader vue-template-compiler --save-dev`
 
 `npm i vue vuex --save`
+
+`npm i pug pug-loader --save-dev`

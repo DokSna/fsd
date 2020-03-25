@@ -122,6 +122,16 @@ module.exports = {
 			filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
+		new CopyWebpackPlugin([
+			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+			{ from: `${PATHS.src}/static`, to: '' },
+		]),
+		// new CopyWebpackPlugin([
+		// 	{ from: PATHS.src + '/img', to: `img` },
+		// 	{ from: PATHS.src + '/static' },
+		// ]),
+
 		// Copy HtmlWebpackPlugin and change index.html for another html page
 		new HtmlWebpackPlugin({
 			// hash: false,
@@ -135,14 +145,6 @@ module.exports = {
 		//   filename: 'index.html',
 		// }),
 
-		new CopyWebpackPlugin([
-			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-			{ from: `${PATHS.src}/static`, to: '' },
-		]),
-		// new CopyWebpackPlugin([
-		// 	{ from: PATHS.src + '/img', to: `img` },
-		// 	{ from: PATHS.src + '/static' },
-		// ]),
+
 	],
 }

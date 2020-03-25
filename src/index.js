@@ -9,6 +9,7 @@ import './assets/scss/main.scss'
 // import Vue from 'vue'
 window.Vue = require('vue') //сдесь мы Vue подвешиваем на window, =~
 
+// Vue components (for use in html)
 Vue.component('example-component', require('./components/Example.vue').default)	//~=а далее мы уже к ней обращаемся.
 
 import store from './store'
@@ -23,6 +24,11 @@ const app = new Vue({
   store,
   el: '#app'
 })
+
+// // Vue init
+// const app = new Vue({
+//   el: '#app'
+// })
 
 //* Without vuex and store
 // const app = new Vue({

@@ -14,8 +14,11 @@ const PATHS = {
 
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-const PAGES_DIR = PATHS.src;
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
+// const PAGES_DIR = PATHS.src;	//вариант попроще
+// const PAGES_DIR = `${PATHS.src}/html`	//в таком случае весь html будет браться из папки html и попадать в папку dist
+// const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
+const PAGES_DIR = `${PATHS.src}/pug/pages/`
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".pug"));
 
 module.exports = {
 
@@ -53,60 +56,65 @@ module.exports = {
 	},
 
 	module: {
-		rules: [{
-			test: /\.js$/,
-			loader: 'babel-loader',
-			exclude: '/node_modules/'
-		}, {
-			test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-			loader: 'file-loader',
-			options: {
-				name: '[name].[ext]'
-			}
-		}, {
-			test: /\.(png|jpg|gif|svg)$/,
-			loader: 'file-loader',
-			options: {
-				name: '[name].[ext]',
-			}
-		}, {
-			test: /\.scss$/,
-			use: [
-				'style-loader',
-				MiniCssExtractPlugin.loader,
-				{
-					loader: 'css-loader',
-					options: { sourceMap: true }
-				}, {
-					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-				}, {
-					loader: 'sass-loader',
-					options: { sourceMap: true }
+		rules: [
+			{
+				test: /\.pug$/,
+				loader: 'pug-loader',
+			},
+			{
+				test: /\.js$/,
+				loader: 'babel-loader',
+				exclude: '/node_modules/'
+			}, {
+				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]'
 				}
-			]
-		}, {
-			test: /\.css$/,
-			use: [
-				'style-loader',
-				MiniCssExtractPlugin.loader,
-				{
-					loader: 'css-loader',
-					options: { sourceMap: true }
-				}, {
-					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+			}, {
+				test: /\.(png|jpg|gif|svg)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[name].[ext]',
 				}
-			]
-		}, {
-			test: /\.vue$/,
-			loader: 'vue-loader',
-			options: {
-				loader: {
-					scss: 'vue-style-loader!css-loader!sass-loader'
+			}, {
+				test: /\.scss$/,
+				use: [
+					'style-loader',
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: { sourceMap: true }
+					}, {
+						loader: 'postcss-loader',
+						options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+					}, {
+						loader: 'sass-loader',
+						options: { sourceMap: true }
+					}
+				]
+			}, {
+				test: /\.css$/,
+				use: [
+					'style-loader',
+					MiniCssExtractPlugin.loader,
+					{
+						loader: 'css-loader',
+						options: { sourceMap: true }
+					}, {
+						loader: 'postcss-loader',
+						options: { sourceMap: true, config: { path: `./postcss.config.js` } }
+					}
+				]
+			}, {
+				test: /\.vue$/,
+				loader: 'vue-loader',
+				options: {
+					loader: {
+						scss: 'vue-style-loader!css-loader!sass-loader'
+					}
 				}
-			}
-		},
+			},
 		]
 	},
 
@@ -158,29 +166,30 @@ module.exports = {
       Best way to create pages:
       https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     */
-		// ...PAGES.map(
-		// 	page =>
-		// 		new HtmlWebpackPlugin({
-		// 			template: `${PAGES_DIR}/${page}`,
-		// 			filename: `./${page}`
-		// 		})
-		// ),
+		...PAGES.map(
+			page =>
+				new HtmlWebpackPlugin({
+					template: `${PAGES_DIR}/${page}`,
+					// filename: `./${page}`
+					filename: `./${page.replace(/\.pug/,'.html')}`	//эта строчка ищет файлы *pug и "реплейсит" их в *.html
+				})
+		),
 
 		// Второй способ - ручной (можно легко связывать с первым способом)
-		new HtmlWebpackPlugin({
-		  template: `${PAGES_DIR}/html/index.html`,	//откуда и какой файл копируем (из src/html/)
-		  filename: './index.html',		//куда копируем - в корень проекта (папка dist)
-		  inject: true
-		}),
-		new HtmlWebpackPlugin({
-		  template: `${PAGES_DIR}/html/about.html`,	//откуда и какой файл копируем (из src/html/)
-		  filename: './mega.html',		//куда копируем - в корень проекта (папка dist)
-		  inject: true
-		}),
 		// new HtmlWebpackPlugin({
-		//   template: `${PAGES_DIR}/about/portfolio.pug`,
-		//   filename: './about/portfolio.html',
-		//   inject: true
-		// })
+		// 	template: `${PAGES_DIR}/html/index.html`,	//откуда и какой файл копируем (из src/html/)
+		// 	filename: './index.html',		//куда копируем - в корень проекта (папка dist)
+		// 	inject: true
+		// }),
+		// new HtmlWebpackPlugin({
+		// 	template: `${PAGES_DIR}/html/about.html`,	//откуда и какой файл копируем (из src/html/)
+		// 	filename: './mega.html',		//куда копируем - в корень проекта (папка dist)
+		// 	inject: true
+		// }),
+		// // new HtmlWebpackPlugin({
+		// //   template: `${PAGES_DIR}/about/portfolio.pug`,
+		// //   filename: './about/portfolio.html',
+		// //   inject: true
+		// // })
 	],
 }

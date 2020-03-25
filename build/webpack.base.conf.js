@@ -1,4 +1,5 @@
 const path = require('path')
+const fs = require("fs");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -9,7 +10,12 @@ const PATHS = {
 	src: path.join(__dirname, '../src'),
 	dist: path.join(__dirname, '../dist'),
 	assets: 'assets/'
-}
+};
+
+// Pages const for HtmlWebpackPlugin
+// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
+const PAGES_DIR = PATHS.src;
+const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
 
 module.exports = {
 
@@ -133,18 +139,43 @@ module.exports = {
 		// ]),
 
 		// Copy HtmlWebpackPlugin and change index.html for another html page
-		new HtmlWebpackPlugin({
-			// hash: false,
-			template: `${PATHS.src}/index.html`,
-			filename: './index.html',
-			inject: true		//авто вставка стилей на страницу
-		}),
+		// new HtmlWebpackPlugin({
+		// 	// hash: false,
+		// 	template: `${PATHS.src}/index.html`,
+		// 	filename: './index.html',
+		// 	inject: true		//авто вставка стилей на страницу
+		// }),
 		// new HtmlWebpackPlugin({
 		//   hash: false,
 		//   template: './src/index.html',
 		//   filename: 'index.html',
 		// }),
 
+    /*	Первый способ - автоматическое добавление страниц
+      Automatic creation any html pages (Don't forget to RERUN dev server!)
+      See more:
+      https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
+      Best way to create pages:
+      https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
+    */
+		...PAGES.map(
+			page =>
+				new HtmlWebpackPlugin({
+					template: `${PAGES_DIR}/${page}`,
+					filename: `./${page}`
+				})
+		),
 
+		// Второй способ - ручной (можно легко связывать с первым способом)
+		// new HtmlWebpackPlugin({
+		//   template: `${PAGES_DIR}/about/index.pug`,
+		//   filename: './about/index.html',
+		//   inject: true
+		// }),
+		// new HtmlWebpackPlugin({
+		//   template: `${PAGES_DIR}/about/portfolio.pug`,
+		//   filename: './about/portfolio.html',
+		//   inject: true
+		// })
 	],
 }

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+// import example from '~/components/Example.vue'  //пример использования алиаса ~ описан в base конфиге
 export default {
   data () {
     return {

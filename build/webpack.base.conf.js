@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')	//VueLoaderPlugin поместили в объект {}, 
-																									//возможно в будущем пригодится ещё какойнибудь плагин из 'vue-loader'
+//возможно в будущем пригодится ещё какойнибудь плагин из 'vue-loader'
 
 const PATHS = {
 	src: path.join(__dirname, '../src'),
@@ -19,7 +19,7 @@ module.exports = {
 
 	entry: {
 		// app: './src/index.js'
-		app: PATHS.src,		
+		app: PATHS.src,
 		// lk: `${PATHS.src}/lk.js`	//вторая точка входа, например для личного кабинета, или что бы разделить основной файл js если он большой
 	},
 
@@ -52,6 +52,12 @@ module.exports = {
 			loader: 'babel-loader',
 			exclude: '/node_modules/'
 		}, {
+			test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+			loader: 'file-loader',
+			options: {
+				name: '[name].[ext]'
+			}
+		}, {
 			test: /\.(png|jpg|gif|svg)$/,
 			loader: 'file-loader',
 			options: {
@@ -67,8 +73,7 @@ module.exports = {
 					options: { sourceMap: true }
 				}, {
 					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
-					// options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
 				}, {
 					loader: 'sass-loader',
 					options: { sourceMap: true }
@@ -84,8 +89,7 @@ module.exports = {
 					options: { sourceMap: true }
 				}, {
 					loader: 'postcss-loader',
-					options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
-					// options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+					options: { sourceMap: true, config: { path: `./postcss.config.js` } }
 				}
 			]
 		}, {
@@ -106,6 +110,7 @@ module.exports = {
 
 	resolve: {
 		alias: {
+			// '~': 'src',	//создание алиаса, пример его использования в Example.vue
 			'vue$': 'vue/dist/vue.js'
 		}
 	},

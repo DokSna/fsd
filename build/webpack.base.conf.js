@@ -33,8 +33,8 @@ module.exports = {
 	},
 
 	output: {
-		// filename: `${PATHS.assets}js/[name].js`,			//без хеша
-		filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
+		filename: `${PATHS.assets}js/[name].js`,			//без хеша
+		// filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
 		path: PATHS.dist,
 		publicPath: '/'
 		// filename: '[name].js',
@@ -132,8 +132,8 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin({
-			// filename: `${PATHS.assets}css/[name].css`,			//без хеша
-			filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
+			filename: `${PATHS.assets}css/[name].css`,			//без хеша
+			// filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
 		new CopyWebpackPlugin([

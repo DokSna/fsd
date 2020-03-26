@@ -36,7 +36,7 @@ module.exports = {
 		filename: `${PATHS.assets}js/[name].js`,			//без хеша
 		// filename: `${PATHS.assets}js/[name].[hash].js`,	//c хешем
 		path: PATHS.dist,
-		publicPath: '/'
+		// publicPath: '/'		//26-03-2020
 		// filename: '[name].js',
 		// path: path.resolve(__dirname, '../dist'),
 		// publicPath: '/dist'

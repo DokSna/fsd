@@ -2,7 +2,7 @@
 node_modules
 
 # Dist
-dist
+# dist
 
 # Files
 package-lock.json

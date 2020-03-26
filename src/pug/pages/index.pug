@@ -1,22 +1,6 @@
+//- используем макет(шаблон)main.pug в качестве основы
 extends ../layout/main
-//-extends - наследование от ../layout/main.pug
-block variables
-  - var title = 'Webpack + Pug';
-  - var description = 'Description for Webpack + Pug';
-  - var pageClass = 'index-page';
-//-сдесь мы описываем "block content", всё что внутри - будет в контенте
-block content
-  section
-    .container
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
-      +item('item title', 'item descr')
-  example-component
 
-block script
-  script(type='text/javascript').
-    const foo = true;
-    let bar = function() {};
-    if (foo) {
-    bar(1 + 5)
-    }
+//- опишем константы для текущей страницы
+block variables
+  - var title = 'Colors & Type'

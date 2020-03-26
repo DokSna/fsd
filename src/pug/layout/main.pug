@@ -1,29 +1,17 @@
-//- так же инклюдим миксинс
-include ../utils/mixins
-//-для того что бы задать константы (title, description, pageClass) - создаём "block variables" 
+//- через variables будем получать константы от тех,
+//- кто будет использовать этот макет
 block variables
 
 doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    //-1й способ указать переменную через решётку
     title #{title}
-    //-2й способ присвоили и ссылаемся на description
-    meta(name="description", content=description)
-    block head
+  body
+    header
+      include ../includes/modules/header
 
-  //-задаём для body класс присваивая классу переменную pageClass
-  body(class=pageClass)
-    .wrapper
-      //-id "app" так как мы будем использовать vue.js
-      #app
-        //- инклюдим хедер
-        include ../includes/modules/header
-        .content-wrapper
-          //-в этом блоке "block content" будет контент
-          block content
-        //-ниже, после ".content-wrapper" с помощью "include" - подключаем содержимое файла footer.pug
-        include ../includes/modules/footer
-
-    block script
+    main
+      p Hello!
+    
+    footer

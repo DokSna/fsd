@@ -4,3 +4,13 @@ extends ../layout/main
 //- опишем константы для текущей страницы
 block variables
   - var title = 'Colors & Type'
+
+block content
+  .content-wrapper_two-columns
+    .wrapper-group
+      .wrapper-items
+        .square
+          include ../includes/blocks/square.pug
+        .square__text-description
+          h2 Dark Shade 100%
+          span #1F2041

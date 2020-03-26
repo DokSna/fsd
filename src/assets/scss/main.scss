@@ -1,4 +1,6 @@
 @import "blocks/logo.scss";
+@import "blocks/square.scss";
+@import "modules/item.scss";
 
 html {
   margin: 0;
@@ -10,6 +12,21 @@ body {
   padding: 0;
 }
 
-p {
-  color: green;
+header {
+  padding: 30px 30px 0;
+  height: 110px;
+}
+
+.content-wrapper_two-columns {
+  padding: 5px 150px 5px 150px;
+  // margin: 150px;
+}
+
+// p {
+//   color: green;
+// }
+
+// времменные стили для dev
+.borders {
+  border: dashed 1px green;
 }

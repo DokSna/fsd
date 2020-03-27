@@ -1,3 +1,4 @@
+@import "utils/fonts.scss";
 @import "blocks/logo.scss";
 @import "blocks/square.scss";
 @import "modules/item.scss";
@@ -21,10 +22,11 @@ header {
   padding: 5px 150px 5px 150px;
   // margin: 150px;
 }
-
-// p {
-//   color: green;
-// }
+// отступ по бокам
+.side-indent {
+  padding-left: 140px;
+  padding-right: 140px;
+}
 
 // времменные стили для dev
 .borders {

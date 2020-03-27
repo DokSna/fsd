@@ -2,6 +2,8 @@
 @import "blocks/logo.scss";
 @import "blocks/square.scss";
 @import "modules/item.scss";
+@import "blocks/type.scss";
+@import "modules/wrapper.scss";
 
 html {
   margin: 0;
@@ -19,8 +21,8 @@ header {
 }
 
 .content-wrapper_two-columns {
-  padding: 5px 150px 5px 150px;
-  // margin: 150px;
+  display: flex;
+  justify-content: space-between;
 }
 // отступ по бокам
 .side-indent {

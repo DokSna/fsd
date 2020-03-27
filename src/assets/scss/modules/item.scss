@@ -1,6 +1,7 @@
 .wrapper-items{
   padding-top: 5px;
   padding-left: 10px;
+  padding-bottom: 15px;
   font-family: 'Quicksand';
   display: flex;
   font-size: 19px;
@@ -12,36 +13,3 @@
       margin-left: 40px;
     }
 }
-
-
-// .wrapper-items {
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// }
-// .square {
-//   display: inline-block;
-// }
-// .square__text-description {
-//   width: 159px;
-//   // height: 57px;
-//   display: inline-block;
-//   margin-left: 40px;
-//   text-align: left;
-//     h2 {
-//       margin: 0;
-//       color: #1F2041;
-//       font-family: 'Quicksand', sans-serif;
-//       // font-family: 'Liu Jian Mao Cao', cursive;
-//       font-style: normal;
-//       font-weight: bold;
-//       font-size: 19px;
-//       line-height: 29px;
-//     }
-//     span {
-//       font-family: 'Quicksand', sans-serif;
-//       font-size: 19px;
-//       margin-top: 105px;
-//       letter-spacing: -1px;
-//     }
-// }

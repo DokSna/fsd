@@ -8,9 +8,30 @@ block variables
 block content
   //- .content-wrapper_two-columns
   .wrapper-group
-    .wrapper-items
-      .square
-        include ../includes/blocks/square.pug
-      .square__text-description
-        p Dark Shade 100%
-        span #1F2041
+    mixin item-square(color, descr, value)
+      .wrapper-items
+        .square.square_shade100
+          include ../includes/blocks/square.pug
+        .square__text-description
+          p=descr
+          span=value
+
+    +item-square(color, 'Dark Shade 100%', '#1F2041')
+    +item-square(color, 'Dark Shade 75%', '#1F2041')
+    +item-square(color, 'Dark Shade 50%', '#1F2041')
+    +item-square(color, 'Dark Shade 25%', '#1F2041')
+    +item-square(color, 'Dark Shade 5%', '#1F2041')
+    +item-square(color, 'Purple', '#BC9CFF')
+    +item-square(color, 'Green', '#6FCF97')
+
+
+
+
+//- .square.square_shade100
+
+      //- .wrapper-items
+        .square
+          include ../includes/blocks/square.pug
+        .square__text-description
+          p Dark Shade 100%
+          span #1F2041

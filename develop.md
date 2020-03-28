@@ -45,3 +45,11 @@
 `npm i vue vuex --save`
 
 `npm i pug pug-loader --save-dev`
+
+## Plugins
+
+### copy-webpack-plugin
+
+[https://webpack.js.org/plugins/copy-webpack-plugin/](https://webpack.js.org/plugins/copy-webpack-plugin/)
+
+[https://github.com/webpack-contrib/copy-webpack-plugin](https://github.com/webpack-contrib/copy-webpack-plugin)

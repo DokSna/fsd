@@ -134,13 +134,26 @@ module.exports = {
 			// filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
+
+		// ignore: ['*.pug', '*.scss', '*.js', 'static/*'],
+
+
 		new CopyWebpackPlugin([
-			{ from: `${PATHS.src}`, to: `${PATHS.assets}img` },
-			// { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-			{ from: `${PATHS.src}`, to: `${PATHS.assets}fonts` },
-			// { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+			{
+				from: `${PATHS.src}`,
+				to: `${PATHS.assets}`,
+				ignore: ['*.pug', '*.scss', '*.js', 'static/**/*'],
+			},
 			{ from: `${PATHS.src}/static`, to: '' },
 		]),
+
+		// new CopyWebpackPlugin([
+		// 	{ from: `${PATHS.src}`, to: `${PATHS.assets}img` },
+		// 	// { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+		// 	{ from: `${PATHS.src}`, to: `${PATHS.assets}fonts` },
+		// 	// { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+		// 	{ from: `${PATHS.src}/static`, to: '' },
+		// ]),
 		// new CopyWebpackPlugin([
 		// 	{ from: PATHS.src + '/img', to: `img` },
 		// 	{ from: PATHS.src + '/static' },
@@ -172,7 +185,7 @@ module.exports = {
 					// template: `${PAGES_DIR}`,
 					template: `${PAGES_DIR}/${page}`,
 					// filename: `./${page}`
-					filename: `./${page.replace(/\.pug/,'.html')}`	//эта строчка ищет файлы *pug и "реплейсит" их в *.html
+					filename: `./${page.replace(/\.pug/, '.html')}`	//эта строчка ищет файлы *pug и "реплейсит" их в *.html
 				})
 		),
 

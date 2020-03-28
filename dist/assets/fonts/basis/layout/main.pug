@@ -1,0 +1,18 @@
+//- через variables будем получать константы от тех,
+//- кто будет использовать этот макет
+block variables
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title #{title}
+    link(rel="shortcut icon" href="./favicon.ico" type="image/x-icon")
+  body
+    header
+      include ../includes/modules/header
+
+    main.side-indent
+      block content
+    
+    footer

@@ -17,7 +17,9 @@ const PATHS = {
 // const PAGES_DIR = PATHS.src;	//вариант попроще
 // const PAGES_DIR = `${PATHS.src}/html`	//в таком случае весь html будет браться из папки html и попадать в папку dist
 // const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
-const PAGES_DIR = `${PATHS.src}/pug/pages/`
+
+// const PAGES_DIR = `${PATHS.src}/pug/pages/`	//было
+const PAGES_DIR = `${PATHS.src}`								//стало
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".pug"));
 
 module.exports = {
@@ -118,16 +120,12 @@ module.exports = {
 		]
 	},
 
-	// devServer: {
-	// 	overlay: true
+	// resolve: {
+	// 	alias: {
+	// 		// '~': 'src',	//создание алиаса, пример его использования в Example.vue
+	// 		'vue$': 'vue/dist/vue.js'
+	// 	}
 	// },
-
-	resolve: {
-		alias: {
-			// '~': 'src',	//создание алиаса, пример его использования в Example.vue
-			'vue$': 'vue/dist/vue.js'
-		}
-	},
 
 	plugins: [
 		new VueLoaderPlugin(),
@@ -137,8 +135,10 @@ module.exports = {
 		}),
 
 		new CopyWebpackPlugin([
-			{ from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-			{ from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
+			{ from: `${PATHS.src}`, to: `${PATHS.assets}img` },
+			// { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
+			{ from: `${PATHS.src}`, to: `${PATHS.assets}fonts` },
+			// { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
 			{ from: `${PATHS.src}/static`, to: '' },
 		]),
 		// new CopyWebpackPlugin([
@@ -169,6 +169,7 @@ module.exports = {
 		...PAGES.map(
 			page =>
 				new HtmlWebpackPlugin({
+					// template: `${PAGES_DIR}`,
 					template: `${PAGES_DIR}/${page}`,
 					// filename: `./${page}`
 					filename: `./${page.replace(/\.pug/,'.html')}`	//эта строчка ищет файлы *pug и "реплейсит" их в *.html

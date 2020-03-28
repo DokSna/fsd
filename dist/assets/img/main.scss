@@ -1,9 +1,10 @@
-// @import "utils/fonts.scss";
-// @import "blocks/logo.scss";
-// @import "blocks/square.scss";
-// @import "modules/item.scss";
-// @import "blocks/type.scss";
-// @import "modules/wrapper.scss";
+// basis
+@import 'basis/header/header.scss';
+@import 'basis/main/main.scss';
+
+// blocks
+@import 'blocks/logo/logo.scss';
+@import 'blocks/square/square.scss';
 
 html {
   margin: 0;
@@ -13,24 +14,10 @@ html {
 body {
   margin: 0;
   padding: 0;
+  // color: red;
 }
 
-header {
-  padding: 30px 30px 0;
-  height: 110px;
-}
-
-.content-wrapper_two-columns {
-  display: flex;
-  justify-content: space-between;
-}
-// отступ по бокам
-.side-indent {
-  padding-left: 140px;
-  padding-right: 140px;
-}
-
-// времменные стили для dev
+// времменные стили видеть границы блоков(для dev)
 .borders {
   border: dashed 1px green;
 }

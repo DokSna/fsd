@@ -7,13 +7,15 @@ block variables
 
 block content
   .content-wrapper_two-columns
-    //- include blocks/colors/colors
-
     .colors_wrapper
-      +item-colors(colors_wrapper,colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
-      +item-colors(colors_wrapper,colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
-      +item-colors(colors_wrapper,colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
-      +item-colors(colors_wrapper,colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
+      +item-colors(colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
+      +item-colors(colors__squares_shade100,'Dark Shade 75%', '#1F2041')(color!='colors__squares_shade75')
+      +item-colors(colors__squares_shade100,'Dark Shade 50%', '#1F2041')(color!='colors__squares_shade50')
+      +item-colors(colors__squares_shade100,'Dark Shade 25%', '#1F2041')(color!='colors__squares_shade25')
+      +item-colors(colors__squares_shade100,'Dark Shade 5%', '#1F2041')(color!='colors__squares_shade5')
+      +item-colors(colors__squares_shade100,'Purple', '#BC9CFF')(color!='colors__squares_purple')
+      +item-colors(colors__squares_shade100,'Green', '#6FCF97')(color!='colors__squares_green')
+
     //- .wrapper-group
     //-   .wrapper-items-types__1
     //-     .type__1 H1

@@ -10,7 +10,14 @@
 .colors_wrapper {
   display: flex;
   flex-direction: column;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+.colors_wrapper > .colors {
+  padding-top: 20px;
+}
+.colors_wrapper > .colors:first-child {
+  padding-top: 0px;
 }
 // .wrapper-items{
 //   padding-top: 5px;

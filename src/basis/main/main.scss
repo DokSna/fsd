@@ -7,23 +7,26 @@
   padding-left: 140px;
   padding-right: 140px;
 }
-// @import "../utils/fonts.scss";
-
-.wrapper-items{
-  padding-top: 5px;
-  padding-left: 10px;
-  padding-bottom: 15px;
-  font-family: 'Quicksand';
+.colors_wrapper {
   display: flex;
-  font-size: 19px;
-  p {
-      margin: 9px 0 5px 40px;
-      font-weight: bold;
-    }
-    span {
-      margin-left: 40px;
-    }
+  flex-direction: column;
+  padding-bottom: 15px;
 }
+// .wrapper-items{
+//   padding-top: 5px;
+//   padding-left: 10px;
+//   padding-bottom: 15px;
+//   font-family: 'Quicksand';
+//   display: flex;
+//   font-size: 19px;
+//   p {
+//       margin: 9px 0 5px 40px;
+//       font-weight: bold;
+//     }
+//     span {
+//       margin-left: 40px;
+//     }
+// }
 .wrapper-items-types__1{
   padding-top: 5px;
   // padding-left: 10px;

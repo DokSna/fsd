@@ -1,6 +1,8 @@
 //- через variables будем получать константы от тех,
 //- кто будет использовать этот макет
 block variables
+//- подключим файл с миксинами
+include ../mixins.pug
 
 doctype html
 html(lang='en')
@@ -10,7 +12,7 @@ html(lang='en')
     link(rel="shortcut icon" href="./favicon.ico" type="image/x-icon")
   body
     header
-      include ../header/header.pug
+      include ../header/header
 
     main.side-indent
       block content

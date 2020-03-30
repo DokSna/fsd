@@ -123,7 +123,8 @@ module.exports = {
 	// resolve: {
 	// 	alias: {
 	// 		// '~': 'src',	//создание алиаса, пример его использования в Example.vue
-	// 		'vue$': 'vue/dist/vue.js'
+	// 		// '~': PAGES_DIR,	//корень src
+	// 		// 'vue$': 'vue/dist/vue.js'
 	// 	}
 	// },
 
@@ -148,6 +149,7 @@ module.exports = {
 				from: `${PATHS.src}/static`,
 				to: ''
 			},
+			
 			// {
 			// 	from: `${PATHS.src}/blocks/square/fonts`,
 			// 	to: `${PATHS.dist}/fonts`

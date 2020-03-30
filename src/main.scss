@@ -4,7 +4,7 @@
 
 // blocks
 @import 'blocks/logo/logo.scss';
-@import 'blocks/square/square.scss';
+@import 'blocks/colors/colors.scss';
 
 html {
   margin: 0;
@@ -14,7 +14,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  // color: red;
 }
 
 // времменные стили видеть границы блоков(для dev)

@@ -1,11 +1,20 @@
 @import './fonts/fonts.scss';
 
-.square {
+.colors {
+  display: flex;
+  justify-content: space-between;
+  // padding-bottom: 15px;
+  width: 269px;
+  height: 70px;
+
+}
+
+.colors__squares {
   width: 70px;
   height: 70px;
   border-radius: 6px;
 }
-.square_shade100 {
+.colors__squares_shade100 {
   background: rgba(31,32,65, 1);
 }
 .square_shade75 {
@@ -25,4 +34,18 @@
 }
 .square_green {
   background: #6FCF97;
+}
+
+.colors__text{
+  padding-top: 9px;
+  width: 159px;
+  height: 57px;
+  font-family: 'Quicksand';
+  display: flex;
+  flex-direction: column;
+  font-size: 19px;
+}
+.colors__text_bold {
+  margin-bottom: 5px;
+  font-weight: bold;
 }

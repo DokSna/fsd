@@ -144,7 +144,16 @@ module.exports = {
 				to: `${PATHS.assets}`,
 				ignore: ['*.pug', '*.scss', '*.js', 'static/**/*'],
 			},
-			{ from: `${PATHS.src}/static`, to: '' },
+			{
+				from: `${PATHS.src}/static`,
+				to: ''
+			},
+			// {
+			// 	from: `${PATHS.src}/blocks/square/fonts`,
+			// 	to: `${PATHS.dist}/fonts`
+			// 	// toType: 'dir',
+			// force: true,
+			// },
 		]),
 
 		// new CopyWebpackPlugin([

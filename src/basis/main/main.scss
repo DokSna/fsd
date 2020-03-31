@@ -1,16 +1,18 @@
 .content-wrapper_two-columns {
   display: flex;
   justify-content: space-between;
+  padding-top: 5px;
 }
 // отступ по бокам
 .side-indent {
   padding-left: 140px;
   padding-right: 140px;
 }
+// Colors
 .colors_wrapper {
   display: flex;
   flex-direction: column;
-  padding-top: 5px;
+  // padding-top: 5px;
   padding-left: 10px;
 }
 .colors_wrapper > .colors {
@@ -21,8 +23,8 @@
 }
 // Type
 .type-wrapper {
-  padding-right: 43px;
-  padding-top: 5px;
+  padding-right: 51px;
+  // padding-top: 5px;
 }
 .type-wrapper > .type {
   padding-top: 50px;

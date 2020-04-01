@@ -71,15 +71,19 @@ module.exports = {
 				test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
 				loader: 'file-loader',
 				options: {
-					name: '[name].[ext]'
+          name: "fonts/[name].[ext]",
+          outputPath: "assets/"
 				}
-			}, {
+			},
+			 {
 				test: /\.(png|jpg|gif|svg)$/,
+				exclude: [/fonts/],
 				loader: 'file-loader',
 				options: {
 					name: '[name].[ext]',
 				}
-			}, {
+			},
+			 {
 				test: /\.scss$/,
 				use: [
 					'style-loader',
@@ -131,7 +135,7 @@ module.exports = {
 	plugins: [
 		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin({
-			filename: `${PATHS.assets}css/[name].css`,			//без хеша
+			filename: '[name].css',			//без хеша
 			// filename: `${PATHS.assets}css/[name].[hash].css`,	//с хешем
 		}),
 
@@ -143,7 +147,7 @@ module.exports = {
 			{
 				from: `${PATHS.src}`,
 				to: `${PATHS.assets}`,
-				ignore: ['*.pug', '*.scss', '*.js', 'static/**/*'],
+				ignore: ['*.pug', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],
 			},
 			{
 				from: `${PATHS.src}/static`,

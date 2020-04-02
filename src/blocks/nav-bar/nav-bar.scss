@@ -2,12 +2,11 @@
   background-color: white;
   width: auto;
   padding-top: 15px;
-  // padding-left: 18px;
-  // +
-  // position: absolute;
-  // width: 1440px;
   height: 55px;
-  // left: 0px;
-  // top: 260px;
-  // -
+}
+.between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 370px;
 }

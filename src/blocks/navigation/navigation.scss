@@ -1,0 +1,48 @@
+// убираем отступы у всех дочерних элементов
+.navigation * {
+  margin: 0;
+  padding: 0;
+}
+// убираем маркеры у списка
+.navigation ol,
+.navigation ul {
+  list-style: none;
+}
+// делаем список меню - горизонтальным
+.navigation >ul {
+  display: flex;
+  justify-content: space-between;
+  width: 528px;
+  height: 20px;
+}
+.navigation > ul li img {
+  display: inline-block;
+}
+.navigation > ul li a {
+  display: inline-block;
+  height: 18px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none;
+  // letter-spacing: -0.5px;
+  // margin-right: 32px;
+}
+.navigation > ul li a.navigation__link-active {
+  height: 18px;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  /* Dark 75% */
+  color: rgba(31, 32, 65, 0.75);
+}
+.navigation__link-group {
+  display: flex;
+  justify-content: space-between;
+  width: 75px;
+}

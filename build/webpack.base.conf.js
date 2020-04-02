@@ -19,7 +19,7 @@ const PATHS = {
 // const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
 
 // const PAGES_DIR = `${PATHS.src}/pug/pages/`	//было
-const PAGES_DIR = `${PATHS.src}`								//стало
+const PAGES_DIR = `${PATHS.src}/pages/`								//стало
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".pug"));
 
 module.exports = {

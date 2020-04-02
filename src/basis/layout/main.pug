@@ -10,11 +10,12 @@ html(lang='en')
     meta(charset='utf-8')
     title #{title}
     link(rel="shortcut icon" href="./favicon.ico")
-  body
+  body(class=pageClass)
     header
       include ../header/header
 
-    main.side-indent
+    main
       block content
     
-    footer Привет!
+    footer
+      include ../footer/footer

@@ -6,7 +6,7 @@ block variables
   - var title = 'Colors & Type'
 
 block content
-  .content-wrapper_two-columns
+  .content-wrapper_two-columns.side-indent
     .colors_wrapper
       +item-colors(colors__squares_shade100,'Dark Shade 100%', '#1F2041')(color!='colors__squares_shade100')
       +item-colors(colors__squares_shade100,'Dark Shade 75%', '#1F2041')(color!='colors__squares_shade75')
@@ -22,4 +22,3 @@ block content
       +item-type(blockNumber, 'H3', textNumber, 'This is a label or CTA text')(blockNumber!='type__block-3')(textNumber!='type__text-3')
       +item-type(blockNumber, 'Body', textNumber, 'This is the body text which is used for most of the design, like paragraphs, lists, etc.')(blockNumber!='type__block-4')(textNumber!='type__text-4')
 
-//- include blocks/type/type

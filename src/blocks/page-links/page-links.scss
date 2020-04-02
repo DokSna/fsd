@@ -1,0 +1,12 @@
+.page-links {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+    a {
+      display: inline-block;
+      margin: 0 5px;
+    }
+    a:hover {
+      cursor: pointer;
+    }
+}

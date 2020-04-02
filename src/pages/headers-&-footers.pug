@@ -1,0 +1,10 @@
+//- используем макет(шаблон)main.pug в качестве основы
+extends ../basis/layout/main
+
+//- опишем константы для текущей страницы
+block variables
+  - var title = 'Headers & Footers';
+  - var pageClass = 'pageClass-GreyBackground';
+
+block content
+  include ../blocks/nav-bar/nav-bar

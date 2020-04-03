@@ -9,18 +9,21 @@
   list-style: none;
 }
 // делаем список меню - горизонтальным
-.navigation >ul {
+.navigation > ul {
   display: flex;
   justify-content: space-between;
   width: 528px;
   height: 20px;
+}
+.navigation > ul li {
+  position: relative;
 }
 .navigation > ul li img {
   display: inline-block;
 }
 .navigation > ul li a {
   display: inline-block;
-  height: 18px;
+  height: 40px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
@@ -28,26 +31,61 @@
   line-height: 17px;
   color: rgba(31, 32, 65, 0.5);
   text-decoration: none;
-  // letter-spacing: -0.5px;
-  // margin-right: 32px;
+  letter-spacing: -0.01em;
 }
 .navigation > ul li a.navigation__link-active {
-  height: 18px;
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: bold;
-  font-size: 14px;
-  line-height: 17px;
-  /* Dark 75% */
   color: rgba(31, 32, 65, 0.75);
 }
-.navigation__link-group {
-  display: flex;
-  justify-content: space-between;
-  width: 75px;
+.navigation img {
+  margin-left: 6px;
 }
 // корректируем по Perfect Pixel
-.navigation-adjustment {
+.navigation-cor {
   position: relative;
   left: 2px;
+}
+.navigation-cor-2 {
+  position: relative;
+  right: 2px;
+}
+
+// / S u b   m e n u / выпадающее меню
+.navigation li ul {
+  position: absolute;
+  top: 40px;
+  left: -10px;
+  min-width: 120px;
+  // скрываем sub-menu
+  display: none;
+}
+.navigation li > ul li {
+  border: 1px solid rgba(31, 32, 65, 0.1);
+  border-top: none;
+  background-color: white;
+}
+.navigation li > ul li a {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  position: relative;
+}
+.navigation_right-pointer {
+  display: flex;
+  justify-content: space-between;
+}
+// чтоб sub-menu раскрывалось при наведении
+.navigation li:hover > ul {
+  display: block;
+}
+
+
+//  S u b > s u b - m e n u
+.navigation li > ul li ul {
+  position: absolute;
+  left: 118px;
+  top: 4px;
+}
+.navigation li > ul li ul li:first-child {
+  border: 1px solid rgba(31, 32, 65, 0.1);
 }

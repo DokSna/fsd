@@ -46,3 +46,8 @@
   justify-content: space-between;
   width: 75px;
 }
+// корректируем по Perfect Pixel
+.navigation-adjustment {
+  position: relative;
+  left: 2px;
+}

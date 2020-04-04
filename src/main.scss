@@ -2,16 +2,17 @@
 @import 'fonts/fonts.scss';
 @import 'basis/header/header.scss';
 @import 'basis/main/main.scss';
+@import 'basis/nav-bar/nav-bar.scss';
 
 // blocks 
 @import 'blocks/logo/logo.scss';
 @import 'blocks/colors/colors.scss';
 @import 'blocks/type/type.scss';
 @import 'blocks/page-links/page-links.scss';
-@import 'blocks/nav-bar/nav-bar.scss';
 @import 'blocks/logo-toxin/logo-toxin.scss';
 @import 'blocks/navigation/navigation.scss';
 @import 'blocks/link-works/link-works.scss';
+@import 'blocks/entry/entry.scss';
 
 html {
   margin: 0;

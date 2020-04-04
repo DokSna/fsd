@@ -1,0 +1,18 @@
+.nav-bar {
+  background-color: white;
+  width: auto;
+}
+.nav-bar_wrapper {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // padding-right: 370px;
+}
+.nav-bar_wrapper-right {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 758px;
+}

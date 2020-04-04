@@ -13,3 +13,19 @@ mixin item-type(blockNumber, blockText, textNumber, textText)
       blockText=blockText
     div(class!=attributes.textNumber).type_right-column
       textText=textText
+
+//- blocks/links
+mixin column-links(name1, url1, name2, url2, name3, url3, name4, url4, name5, url5)
+  .links
+    nav
+      ul
+        li
+          a(href=url1)=name1
+        li
+          a(href=url2)=name2
+        li
+          a(href=url3)=name3
+        li
+          a(href=url4)=name4
+        li
+          a(href=url5)=name5

@@ -3,6 +3,7 @@
 @import 'basis/header/header.scss';
 @import 'basis/main/main.scss';
 @import 'basis/nav-bar/nav-bar.scss';
+@import 'basis/footer-links/footer-links.scss';
 
 // blocks 
 @import 'blocks/logo/logo.scss';
@@ -14,6 +15,9 @@
 @import 'blocks/link-works/link-works.scss';
 @import 'blocks/entry/entry.scss';
 @import 'blocks/user/user.scss';
+@import 'blocks/about/about.scss';
+@import 'blocks/links/links.scss';
+@import 'blocks/subscription/subscription.scss';
 
 html {
   margin: 0;

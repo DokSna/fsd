@@ -36,7 +36,7 @@
   display: flex;
   align-items: center;
 }
-.navigation > ul li a.navigation__link-active {
+.navigation > ul li a.navigation_link-active {
   font-weight: bold;
   color: rgba(31, 32, 65, 0.75);
 }
@@ -53,29 +53,9 @@
   right: 2px;
 }
 // пункты меню раскрывающие под-меню не должны содержать ссылок
-.navigation__link_group-head {
-  cursor: pointer;
-  display: inline-block;
-  height: 70px;
-  // width: 110px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: rgba(31, 32, 65, 0.5);
-  letter-spacing: -0.01em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  // padding: 0 5px;
-
-}
 .navigation__link_group {
   cursor: pointer;
   display: inline-block;
-  height: 40px;
-  width: 110px;
   font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
@@ -86,8 +66,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.navigation__link_group-head {
+  height: 70px;
+}
+.navigation__link_group-column {
+  height: 40px;
+  width: 100px;
   padding: 0 10px;
 }
+
 // / S u b   m e n u / выпадающее меню
 .navigation li ul {
   position: absolute;
@@ -117,7 +105,7 @@
 //  S u b > s u b - m e n u
 .navigation li > ul li ul {
   position: absolute;
-  left: 130px;
+  left: 120px;
   top: 4px;
 }
 .navigation li > ul li ul li:first-child {

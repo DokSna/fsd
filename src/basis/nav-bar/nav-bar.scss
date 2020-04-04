@@ -9,10 +9,13 @@
   align-items: center;
   // padding-right: 370px;
 }
+.nav-bar_indent-right {
+  margin-right: 30px;
+}
 .nav-bar_wrapper-right {
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 758px;
+  // width: 758px;
 }

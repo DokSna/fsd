@@ -5,6 +5,20 @@ extends ../basis/layout/main
 block variables
   - var title = 'Headers & Footers';
   - var pageClass = 'pageClass-GreyBackground';
+  
 
 block content
+  block var
+    - var userLogin = 0;
   include ../basis/nav-bar/nav-bar
+  .indent
+    block var
+      - var userLogin = 1;
+    include ../basis/nav-bar/nav-bar
+
+  - var userLogin = 1;
+  case userLogin
+    when 1
+      p Привет Юзер
+    default
+      p Залогинься

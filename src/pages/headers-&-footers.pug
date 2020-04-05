@@ -5,7 +5,8 @@ extends ../basis/layout/main
 block variables
   - var title = 'Headers & Footers';
   - var pageClass = 'pageClass-GreyBackground';
-  
+block head
+  link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 
 block content
   block var
@@ -24,3 +25,10 @@ block content
       p Привет Юзер
     default
       p Залогинься
+  i.fa.fa-twitter.fa-fw
+  i.fa.fa-twitter.fa-stack-3x
+  li
+  i.fa.fa-twitter.fa-stack-2x
+
+  .social
+    span

@@ -52,5 +52,30 @@
   url("fonts/MaterialIcons-Regular/MaterialIcons-Regular.ttf") format("truetype");
 }
 
+// "Font Awesome 5 Brands"
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  src:
+   url('fonts/Font-Awesome-5-Brands/Font Awesome 5 Brands-Regular-400.eot');
+  src:
+  //  local('☺'),
+    url('fonts/Font-Awesome-5-Brands/Font Awesome 5 Brands-Regular-400.woff') format('woff'),
+    url('fonts/Font-Awesome-5-Brands/Font Awesome 5 Brands-Regular-400.ttf') format('truetype'),
+    url('fonts/Font-Awesome-5-Brands/Font Awesome 5 Brands-Regular-400.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// "Font Awesome 5 Brands"
+// @font-face {
+//   font-family: "Font Awesome 5 Brands";
+//   src:
+//     url('fonts/FontAwesome5/brands/Montserrat-Bold.woff') format('woff'),
+//     url('fonts/Montserrat/Montserrat-Bold.ttf') format('truetype'),
+//     url('fonts/Montserrat/Montserrat-Bold.svg') format('svg');
+//   font-weight: bold;
+//   font-style: normal;
+// }
+
 // @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&display=swap');
 // @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=cyrillic-ext');

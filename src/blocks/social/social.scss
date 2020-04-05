@@ -1,0 +1,12 @@
+// li:before {
+//   content: "\f015"; /* добавляем иконку дом */
+//   // content: "\&#xf16d"; /* добавляем иконку дом */ 
+//   font-family: "FontAwesome";
+//   color: #bb2a2a;
+//   margin-right: 10px; 
+//   }
+.social span:before {
+  font-family: "Font Awesome 5 Brands";
+  content: "";
+  color: red;
+}

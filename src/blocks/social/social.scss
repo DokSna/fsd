@@ -6,8 +6,8 @@
     text-decoration: none;
   }
   a span:before {
-  font-family: "Font Awesome 5 Brands";
-  content: "";
+  font-family: 'Font Awesome 5 Brands';
+  content: '';
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -20,11 +20,11 @@
   color: #8BA4F9;
 }
   a:nth-child(2) span:before {
-    font-family: "Font Awesome 5 Brands";
-    content: "";
+    font-family: 'Font Awesome 5 Brands';
+    content: '';
   }
   a:last-child span:before {
-    font-family: "Font Awesome 5 Brands";
-    content: "";
+    font-family: 'Font Awesome 5 Brands';
+    content: '';
   }
 }

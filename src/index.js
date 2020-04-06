@@ -1,2 +1,2 @@
-import './basis/common'
-import './main.scss'
+import "./basis/common"
+import "./main.scss"

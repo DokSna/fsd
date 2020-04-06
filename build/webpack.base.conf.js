@@ -1,15 +1,15 @@
-const path = require('path')
+const path = require("path")
 const fs = require("fs");
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')  //VueLoaderPlugin поместили в объект {}, 
-//возможно в будущем пригодится ещё какойнибудь плагин из 'vue-loader'
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { VueLoaderPlugin } = require("vue-loader")  //VueLoaderPlugin поместили в объект {}, 
+//возможно в будущем пригодится ещё какойнибудь плагин из "vue-loader"
 
 const PATHS = {
-  src: path.join(__dirname, '../src'),
-  dist: path.join(__dirname, '../dist'),
-  assets: 'assets/'
+  src: path.join(__dirname, "../src"),
+  dist: path.join(__dirname, "../dist"),
+  assets: "assets/"
 };
 
 // Pages const for HtmlWebpackPlugin
@@ -29,7 +29,7 @@ module.exports = {
   },
 
   entry: {
-    // app: './src/index.js'
+    // app: "./src/index.js"
     app: PATHS.src,
     // lk: `${PATHS.src}/lk.js`  //вторая точка входа, например для личного кабинета, или что бы разделить основной файл js если он большой
   },
@@ -38,19 +38,19 @@ module.exports = {
     filename: `${PATHS.assets}js/[name].js`,      //без хеша
     // filename: `${PATHS.assets}js/[name].[hash].js`,  //c хешем
     path: PATHS.dist,
-    // publicPath: '/'    //26-03-2020
-    // filename: '[name].js',
-    // path: path.resolve(__dirname, '../dist'),
-    // publicPath: '/dist'
+    // publicPath: "/"    //26-03-2020
+    // filename: "[name].js",
+    // path: path.resolve(__dirname, "../dist"),
+    // publicPath: "/dist"
   },
 
   optimization: {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          name: 'vendors',
+          name: "vendors",
           test: /node_modules/,
-          chunks: 'all',
+          chunks: "all",
           enforce: true
         }
       }
@@ -61,15 +61,15 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        loader: 'pug-loader',
+        loader: "pug-loader",
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: '/node_modules/'
+        loader: "babel-loader",
+        exclude: "/node_modules/"
       }, {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
           name: "fonts/[name].[ext]",
           outputPath: "assets/"
@@ -78,46 +78,46 @@ module.exports = {
       {
         test: /\.(png|jpg|gif|svg)$/,
         exclude: [/fonts/],
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          name: '[name].[ext]',
+          name: "[name].[ext]",
         }
       },
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          "style-loader",
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: { sourceMap: true }
           }, {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: { sourceMap: true, config: { path: `./postcss.config.js` } }
           }, {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: { sourceMap: true }
           }
         ]
       }, {
         test: /\.css$/,
         use: [
-          'style-loader',
+          "style-loader",
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: { sourceMap: true }
           }, {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: { sourceMap: true, config: { path: `./postcss.config.js` } }
           }
         ]
       }, {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: "vue-loader",
         options: {
           loader: {
-            scss: 'vue-style-loader!css-loader!sass-loader'
+            scss: "vue-style-loader!css-loader!sass-loader"
           }
         }
       },
@@ -126,38 +126,38 @@ module.exports = {
 
   // resolve: {
   //   alias: {
-  //     // '~': 'src',  //создание алиаса, пример его использования в Example.vue
-  //     // '~': PAGES_DIR,  //корень src
-  //     // 'vue$': 'vue/dist/vue.js'
+  //     // "~": "src",  //создание алиаса, пример его использования в Example.vue
+  //     // "~": PAGES_DIR,  //корень src
+  //     // "vue$": "vue/dist/vue.js"
   //   }
   // },
 
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].css',      //без хеша
+      filename: "[name].css",      //без хеша
       // filename: `${PATHS.assets}css/[name].[hash].css`,  //с хешем
     }),
 
 
-    // ignore: ['*.pug', '*.scss', '*.js', 'static/*'],
+    // ignore: ["*.pug", "*.scss", "*.js", "static/*"],
 
 
     new CopyWebpackPlugin([
       {
         from: `${PATHS.src}`,
         to: `${PATHS.assets}`,
-        ignore: ['*.pug', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],
+        ignore: ["*.pug", "*.scss", "*.js", "static/**/*", "fonts/**/*"],
       },
       {
         from: `${PATHS.src}/static`,
-        to: ''
+        to: ""
       },
 
       // {
       //   from: `${PATHS.src}/blocks/square/fonts`,
       //   to: `${PATHS.dist}/fonts`
-      //   // toType: 'dir',
+      //   // toType: "dir",
       // force: true,
       // },
     ]),
@@ -167,28 +167,28 @@ module.exports = {
     //   // { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
     //   { from: `${PATHS.src}`, to: `${PATHS.assets}fonts` },
     //   // { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-    //   { from: `${PATHS.src}/static`, to: '' },
+    //   { from: `${PATHS.src}/static`, to: "" },
     // ]),
     // new CopyWebpackPlugin([
-    //   { from: PATHS.src + '/img', to: `img` },
-    //   { from: PATHS.src + '/static' },
+    //   { from: PATHS.src + "/img", to: `img` },
+    //   { from: PATHS.src + "/static" },
     // ]),
 
     // Copy HtmlWebpackPlugin and change index.html for another html page
     // new HtmlWebpackPlugin({
     //   // hash: false,
     //   template: `${PATHS.src}/index.html`,
-    //   filename: './index.html',
+    //   filename: "./index.html",
     //   inject: true    //авто вставка стилей на страницу
     // }),
     // new HtmlWebpackPlugin({
     //   hash: false,
-    //   template: './src/index.html',
-    //   filename: 'index.html',
+    //   template: "./src/index.html",
+    //   filename: "index.html",
     // }),
 
     /*  Первый способ - автоматическое добавление страниц
-      Automatic creation any html pages (Don't forget to RERUN dev server!)
+      Automatic creation any html pages (Don"t forget to RERUN dev server!)
       See more:
       https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
       Best way to create pages:
@@ -200,24 +200,24 @@ module.exports = {
           // template: `${PAGES_DIR}`,
           template: `${PAGES_DIR}/${page}`,
           // filename: `./${page}`
-          filename: `./${page.replace(/\.pug/, '.html')}`  //эта строчка ищет файлы *pug и "реплейсит" их в *.html
+          filename: `./${page.replace(/\.pug/, ".html")}`  //эта строчка ищет файлы *pug и "реплейсит" их в *.html
         })
     ),
 
     // Второй способ - ручной (можно легко связывать с первым способом)
     // new HtmlWebpackPlugin({
     //   template: `${PAGES_DIR}/html/index.html`,  //откуда и какой файл копируем (из src/html/)
-    //   filename: './index.html',    //куда копируем - в корень проекта (папка dist)
+    //   filename: "./index.html",    //куда копируем - в корень проекта (папка dist)
     //   inject: true
     // }),
     // new HtmlWebpackPlugin({
     //   template: `${PAGES_DIR}/html/about.html`,  //откуда и какой файл копируем (из src/html/)
-    //   filename: './mega.html',    //куда копируем - в корень проекта (папка dist)
+    //   filename: "./mega.html",    //куда копируем - в корень проекта (папка dist)
     //   inject: true
     // }),
     // // new HtmlWebpackPlugin({
     // //   template: `${PAGES_DIR}/about/portfolio.pug`,
-    // //   filename: './about/portfolio.html',
+    // //   filename: "./about/portfolio.html",
     // //   inject: true
     // // })
   ],

@@ -11,24 +11,30 @@ block head
 block content
   block var
     - var userLogin = 0;
-  include ../basis/nav-bar/nav-bar
-  .indent
+  include ../basis/bar/bar
+    block bar-content
+      include ../blocks/logo-toxin/logo-toxin
+      .nav-bar_wrapper-right
+        .nav-bar_indent-right
+          include ../blocks/navigation/navigation
+        include ../blocks/user-login/user-login
+
+  .indent.z-index
     block var
       - var userLogin = 1;
-    include ../basis/nav-bar/nav-bar
+    include ../basis/bar/bar
+      block bar-content
+        include ../blocks/logo-toxin/logo-toxin
+        .nav-bar_wrapper-right
+          .nav-bar_indent-right
+            include ../blocks/navigation/navigation
+          include ../blocks/user-login/user-login
 
   include ../basis/footer-links/footer-links
 
-  - var userLogin = 1;
-  case userLogin
-    when 1
-      p Привет Юзер
-    default
-      p Залогинься
-  i.fa.fa-twitter.fa-fw
-  i.fa.fa-twitter.fa-stack-3x
-  li
-  i.fa.fa-twitter.fa-stack-2x
-
-  .social
-    span
+  .indent-1px-top
+    include ../basis/bar/bar
+      block bar-content
+        include ../blocks/copyright/copyright
+        .indent-right-2px
+          include ../blocks/social/social

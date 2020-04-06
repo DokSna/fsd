@@ -1,12 +1,30 @@
-// li:before {
-//   content: "\f015"; /* добавляем иконку дом */
-//   // content: "\&#xf16d"; /* добавляем иконку дом */ 
-//   font-family: "FontAwesome";
-//   color: #bb2a2a;
-//   margin-right: 10px; 
-//   }
-.social span:before {
+.social {
+  display: flex;
+  justify-content: space-between;
+  width: 110px;
+  a {
+    text-decoration: none;
+  }
+  a span:before {
   font-family: "Font Awesome 5 Brands";
   content: "";
-  color: red;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 23px;
+  /* identical to box height */
+  display: flex;
+  align-items: center;
+  text-align: center;
+  /* Primary Gradient */
+  color: #8BA4F9;
+}
+  a:nth-child(2) span:before {
+    font-family: "Font Awesome 5 Brands";
+    content: "";
+  }
+  a:last-child span:before {
+    font-family: "Font Awesome 5 Brands";
+    content: "";
+  }
 }

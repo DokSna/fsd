@@ -2,10 +2,11 @@
 @import 'fonts/fonts.scss';
 @import 'basis/header/header.scss';
 @import 'basis/main/main.scss';
-@import 'basis/nav-bar/nav-bar.scss';
 @import 'basis/footer-links/footer-links.scss';
+@import 'basis/bar/bar.scss';
 
 // blocks 
+@import 'blocks/copyright/copyright.scss';
 @import 'blocks/social/social.scss';
 @import 'blocks/logo/logo.scss';
 @import 'blocks/colors/colors.scss';
@@ -37,6 +38,16 @@ body {
   }
   .indent {
     margin-top: 40px;
+  }
+  .indent-1px-top {
+    margin-top: 1px;
+  }
+  .indent-right-2px {
+    padding-right: 2px;
+  }
+  .z-index ul,
+  .z-index li {
+    z-index: 1;
   }
 }
 // времменные стили видеть границы блоков(для dev)

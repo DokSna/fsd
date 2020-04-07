@@ -1,13 +1,37 @@
+// отступ по бокам
+.side-indent {
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+// pageClass
+// "Headers & Footers"
+.pageClass-GreyBackground {
+  background-color: #E5E5E5;
+  main {
+    padding-top: 10px;
+  }
+  .indent {
+    margin-top: 40px;
+  }
+  .indent-1px-top {
+    margin-top: 1px;
+  }
+  .indent-right-2px {
+    padding-right: 2px;
+  }
+  .z-index ul,
+  .z-index li {
+    z-index: 1;
+  }
+}
+
+// "Colors & Type"
 .content-wrapper_two-columns {
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
   margin-bottom: 145px;
-}
-// отступ по бокам
-.side-indent {
-  padding-left: 140px;
-  padding-right: 140px;
 }
 // Colors
 .colors_wrapper {

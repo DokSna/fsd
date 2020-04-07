@@ -1,7 +1,9 @@
 // basis 
 @import 'fonts/fonts.scss';
+@import 'scss/pages.scss';
+@import 'scss/variables.scss';
+@import 'scss/mixins.scss';
 @import 'basis/header/header.scss';
-@import 'basis/main/main.scss';
 @import 'basis/footer-links/footer-links.scss';
 @import 'basis/bar/bar.scss';
 @import 'basis/footer-creative/footer-creative.scss';
@@ -22,6 +24,30 @@
 @import 'blocks/links/links.scss';
 @import 'blocks/subscription/subscription.scss';
 
+html {
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $bigDesktopWidth-1440) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: $desktopWidth-1280) {
+    font-size: 17px;
+  }
+  @media screen and (max-width: $smDesktopWidth-980) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth-768) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth-480) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: $sPhoneWidth-320) {
+    font-size: 13px;
+  }
+}
+
 html,
 body {
   margin: 0;
@@ -31,30 +57,10 @@ body {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: $mainFontSize;
   color: black;
 }
 
-// pageClass
-.pageClass-GreyBackground {
-  background-color: #E5E5E5;
-  main {
-    padding-top: 10px;
-  }
-  .indent {
-    margin-top: 40px;
-  }
-  .indent-1px-top {
-    margin-top: 1px;
-  }
-  .indent-right-2px {
-    padding-right: 2px;
-  }
-  .z-index ul,
-  .z-index li {
-    z-index: 1;
-  }
-}
 // времменные стили видеть границы блоков(для dev)
 .borders {
   border: dashed 1px green;

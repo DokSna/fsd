@@ -22,13 +22,17 @@
 @import 'blocks/links/links.scss';
 @import 'blocks/subscription/subscription.scss';
 
-html {
-  margin: 0;
-  padding: 0;
-}
+html,
 body {
   margin: 0;
   padding: 0;
+  background-color: white;
+  // Font
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: black;
 }
 
 // pageClass

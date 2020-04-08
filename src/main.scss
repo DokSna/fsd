@@ -60,6 +60,7 @@ body {
   font-size: $mainFontSize;
   color: $mainFontColor;
 }
+
 // Прижимаем Footer к низу.
 body {
   display: flex;
@@ -68,6 +69,23 @@ body {
   main {
     flex: 1;
   }
+}
+
+// оформление ссылок
+a {
+color: rgba(31, 32, 65, 0.5);
+}
+a:link {  // не посещённая ссылка
+color: rgba(31, 32, 65, 0.5);
+}
+a:visited { // посещённая ссылка
+color: rgba(31, 32, 65, 0.5);
+}
+a:hover { // ссылка, на которую наведен курсор
+  color: #8BA4F9;
+}
+a:active {  // активная ссылка (совершается клик, или удерживается кнопка мыши)
+  color: #66D2EA;
 }
 
 // времменные стили видеть границы блоков(для dev)

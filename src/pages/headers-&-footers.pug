@@ -17,9 +17,9 @@ block content
     block bar-content
       include ../blocks/logo-toxin/logo-toxin
       .nav-bar_wrapper-right
-        .nav-bar_indent-right
-          include ../blocks/navigation/navigation
-        include ../blocks/user-login/user-login
+        include ../blocks/navigation/navigation
+        .nav-bar_indent-left
+          include ../blocks/user-login/user-login
 
   .indent.z-index
     block var
@@ -28,9 +28,9 @@ block content
       block bar-content
         include ../blocks/logo-toxin/logo-toxin
         .nav-bar_wrapper-right
-          .nav-bar_indent-right
-            include ../blocks/navigation/navigation
-          include ../blocks/user-login/user-login
+          include ../blocks/navigation/navigation
+          .nav-bar_indent-left
+            include ../blocks/user-login/user-login
 
   include ../basis/footer-links/footer-links
 

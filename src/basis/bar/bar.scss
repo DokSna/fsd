@@ -12,8 +12,13 @@
 }
 
 // logo-toxin, navigation, user-login
-.nav-bar_indent-right {
-  margin-right: 30px;
+.nav-bar_indent-left {
+  .entry {
+    margin-left: 30px;
+  }
+  .user {
+    margin-left: 29px;
+  }
 }
 .nav-bar_wrapper-right {
   height: 70px;

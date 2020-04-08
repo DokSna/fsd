@@ -58,7 +58,16 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: $mainFontSize;
-  color: black;
+  color: $mainFontColor;
+}
+// Прижимаем Footer к низу.
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex: 1;
+  }
 }
 
 // времменные стили видеть границы блоков(для dev)

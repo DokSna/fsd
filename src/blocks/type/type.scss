@@ -1,7 +1,13 @@
 // position
 .type {
   display: flex;
-  width: 403px;
+  // width: 403px;
+  // max-width: 403px;
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .type_left-column {
   display: flex;
@@ -12,6 +18,11 @@
   display: flex;
   justify-content: flex-start;
   margin-left: 30px;
+  @media (max-width: 480px) {
+    margin-left: guma(10, 480);
+    justify-content: center;
+  }
+
 }
 
 // blocks
@@ -90,7 +101,15 @@
   line-height: 24px;
   color: #1F2041;
 }
-
+.type__text-1,
+.type__text-2,
+.type__text-3,
+.type__text-4 {
+  @media (max-width: 480px) {
+    height: auto;
+    width: auto;
+  }
+}
 // --------------------
 // ниже старый вариант
 // .type__bl {

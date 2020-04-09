@@ -13,6 +13,9 @@
 @function gum($pixels) {
   @return (($pixels * 1px * 100%) / $screenWidth);
 }
+@function guma($pixels, $sc) {
+  @return (($pixels * 100%) / $sc);
+}
 
 // https://codepen.io/jelleverzijden/pen/xGYZYV
 // $baseFontSize : 14;

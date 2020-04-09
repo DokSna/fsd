@@ -1,15 +1,13 @@
-// $screenWidth: 1440;
-// @function rom($pixels) {
-//   @return (($pixels * 100%) /$rrr);
-// }
-
-
 // отступ по бокам
 .side-indent {
   // padding-left: 140px;
   // padding-right: 140px;
   padding-left: gum(140);
   padding-right: gum(140);
+  @media all and (max-width: $comp-980) {
+    padding-left: gum(70);
+    padding-right: gum(70);
+  }
 }
 
 // pageClass
@@ -39,8 +37,26 @@
   display: flex;
   justify-content: space-between;
   padding-top: 5px;
-  margin-bottom: 145px;
+  // margin-bottom: 145px;
+  max-width: 1160px;
+  width: gum(1160);
+  margin: 0 auto 145px;
+  @media all and (max-width: $comp-980) {
+    width: 790px;
+  }
+  @media all and (max-width: 820px) {
+    width: guma(790, 820);
+  }
+  @media all and (max-width: 770px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .colors_wrapper {
+      margin-bottom: 60px;
+    }
+  }
 }
+
 // Colors
 .colors_wrapper {
   display: flex;
@@ -57,6 +73,10 @@
 // Type
 .type-wrapper {
   padding-right: 51px;
+  // padding-right: gum(51);
+  @media (max-width: $comp-1280) {
+    padding-right: 0;
+  }
   // padding-top: 5px;
 }
 .type-wrapper > .type {

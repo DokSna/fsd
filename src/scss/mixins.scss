@@ -11,7 +11,7 @@
 
 // px to % (gum - резина)
 @function gum($pixels) {
-  @return (($pixels * 100%) / $screenWidth);
+  @return (($pixels * 1px * 100%) / $screenWidth);
 }
 
 // https://codepen.io/jelleverzijden/pen/xGYZYV

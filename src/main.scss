@@ -31,9 +31,14 @@ html {
   @media all and (min-width: $comp-1920) {
     font-size: 16px;
   }
-  @media all and (max-width: $comp-1440) {
-    font-size: 14px;
+  // @media all and (max-width: $comp-1440) {
+  //   font-size: 14px;
+  // }
+  // // Цифровое значение равное исходным на макете
+  @media all and (max-width: $screenWidth) {
+    font-size: $mainFontSize;
   }
+  // 
   @media all and (max-width: $comp-980) {
     font-size: 13px;
   }

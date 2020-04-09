@@ -1,7 +1,15 @@
+// $screenWidth: 1440;
+// @function rom($pixels) {
+//   @return (($pixels * 100%) /$rrr);
+// }
+
+
 // отступ по бокам
 .side-indent {
-  padding-left: 140px;
-  padding-right: 140px;
+  // padding-left: 140px;
+  // padding-right: 140px;
+  padding-left: gum(140);
+  padding-right: gum(140);
 }
 
 // pageClass

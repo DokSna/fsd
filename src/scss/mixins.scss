@@ -9,6 +9,10 @@
   @return $pixels / $context * 1rem;
 }
 
+// px to % (gum - резина)
+@function gum($pixels) {
+  @return (($pixels * 100%) / $screenWidth);
+}
 
 // https://codepen.io/jelleverzijden/pen/xGYZYV
 // $baseFontSize : 14;

@@ -17,11 +17,12 @@ html(lang="ru")
     block head
 
   body(class=pageClass)
-    header
-      include ../header/header
+    .body-wrapper
+      header
+        include ../header/header
 
-    main
-      block content
+      main
+        block content
 
-    footer
-      include ../footer/footer
+      footer
+        include ../footer/footer

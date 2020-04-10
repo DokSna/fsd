@@ -6,8 +6,11 @@
 .entry form {
   width: 200px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+  @media (min-width: 480px) {
+  justify-content: space-between;
+  }
 }
 .entry button {
   cursor: pointer;

@@ -31,6 +31,15 @@
     z-index: 1;
   }
 }
+// h-&-f
+.wrapper-bar {
+  display: flex;
+  // flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
 
 // "Colors & Type"
 .content-wrapper_two-columns {

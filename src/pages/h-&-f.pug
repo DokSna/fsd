@@ -1,0 +1,16 @@
+//- используем макет(шаблон)main.pug в качестве основы
+extends ../basis/layout/main
+
+//- опишем константы для текущей страницы
+block variables
+  - var title = "Headers & Footers";
+  - var description = ""
+  - var keywords = ""
+  - var pageClass = "";
+block head
+  //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
+
+block content
+  .wrapper-bar
+    include ../blocks/logo-toxin/logo-toxin
+    include ../blocks/user-login/user-login

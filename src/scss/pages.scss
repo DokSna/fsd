@@ -2,12 +2,16 @@
 .side-indent {
   // padding-left: 140px;
   // padding-right: 140px;
-  padding-left: gum(140);
-  padding-right: gum(140);
-  @media all and (max-width: $comp-980) {
-    padding-left: gum(70);
-    padding-right: gum(70);
-  }
+  // padding-left: gum(140);
+  // padding-right: gum(140);
+  // @media all and (max-width: $comp-980) {
+  //   padding-left: gum(70);
+  //   padding-right: gum(70);
+  // }
+  margin: auto;
+  // @media (min-width: 550px) {
+  //   max-width: 80.5%;
+  // }
 }
 
 // pageClass
@@ -33,14 +37,56 @@
 }
 // h-&-f
 .wrapper-bar {
+  // width: 96%;
   display: flex;
   // flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
+  flex-wrap: wrap;
+  padding-top: 15px;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+    width: 80.5%;
+    justify-content: space-around;
+    padding-top: 0;
+    min-width: 70px;
+  }
+  margin: auto;
+  // :nth-child(3) {
+  //   flex-basis: 528px;
+  // }
+  .navigation-m {
+    margin-top: 15px;
+    display: flex;
+    // flex-wrap: wrap;
+    @media (min-width: 768px) {
+      margin-top: 0;
+      // margin-right: 35px;
+      nav > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+  }
+  @media (min-width: 768px) {
+    > :nth-child(2) {
+      order: 1;
+    }
+  }
 }
-
-
+@media (min-width: 768px) {
+  .wrapper-bar > .logo-toxin {
+    flex: 1;
+    justify-content: flex-start;
+    :first-child {
+      margin-right: 12px;
+    }
+  }
+  .wrapper-bar > .navigation-m {
+    margin: 0 30px;
+  }
+}
 // "Colors & Type"
 .content-wrapper_two-columns {
   display: flex;

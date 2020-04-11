@@ -23,14 +23,15 @@
 @import 'blocks/about/about.scss';
 @import 'blocks/links/links.scss';
 @import 'blocks/subscription/subscription.scss';
+@import 'blocks/navigation-m/navigation-m.scss';
 
 html {
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
   // Mobile - First
-  @media (min-width: 480px) {
-    font-size: 12px;
+  @media (min-width: 1440px) {
+    font-size: 16px;
   }
   // Desktop - First
   // @media all and (min-width: $comp-1920) {

@@ -1,17 +1,22 @@
 .bar {
-  width: auto;
+  width: 100%;
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 .bar_wrapper {
-  height: 70px;
+  min-height: 70px;
+  // padding-top: 15px;
+  // padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
+  
   // padding-right: 370px;
 }
-
+// .bar_wrapper > * {
+//   flex: 1 1 528px;
+// }
 // logo-toxin, navigation, user-login
 .nav-bar_indent-left {
   .entry {

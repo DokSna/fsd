@@ -1,7 +1,7 @@
 // pageClass
 // "Headers & Footers"
 .pageClass-GreyBackground {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   main {
     padding-top: 10px;
   }
@@ -21,61 +21,56 @@
 }
 // h-&-f
 .wrapper-bar {
-  // width: 96%;
   width: 100%;
   display: flex;
-  // flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  padding-top: 15px;
-  @media (min-width: 768px) {
-    flex-wrap: nowrap;
-    // width: 80.5%;
-    justify-content: space-between;
-    padding-top: 0;
-    min-width: 70px;
-  }
-  margin: auto;
-  // :nth-child(3) {
-  //   flex-basis: 528px;
-  // }
-  .navigation-m {
-    // margin-top: 15px;
-    margin: 15;
-    display: flex;
-    // flex-wrap: wrap;
-    @media (min-width: 768px) {
-      // margin: 0 15;
-      // margin-right: 35px;
-      nav > ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-      }
-    }
-  }
+  flex-wrap: nowrap;
   @media (min-width: 768px) {
     > :nth-child(2) {
       order: 1;
     }
   }
-}
-@media (min-width: 768px) {
-  .wrapper-bar > .logo-toxin {
+  .wrapper-logo-toxin {
+    // width: 34.83%;
     flex: 1;
-    justify-content: flex-start;
-    :first-child {
-      margin-right: 12px;
-    }
   }
-  .wrapper-bar > .navigation-m {
-    margin: 0 15px;
-  }
-  .wrapper-bar > .entry {
-    margin-left: 15px;
+  .wrapper-navigation {
+    // margin-right: 30px;
+    margin: 0 2.58%;
   }
 }
+// .wrapper-bar:nth-child(1) {
+//   // flex: 1 0 auto;
+//   flex-grow: 1;
+// }
+// .wrapper-bar:nth-child(2) {
+//   // flex: 0 1 auto;
+//   flex-grow: 0;
+// }
+// .wrapper-bar:nth-child(3) {
+//   // flex: 0 1 auto;
+//   flex-grow: 0;
+// }
+
+// .wrapper-bar:first-child {
+//   flex-grow: 100;
+// }
+// @media (min-width: 768px) {
+//   .wrapper-bar > .logo-toxin {
+//     flex: 1;
+//     justify-content: flex-start;
+//     :first-child {
+//       margin-right: 12px;
+//     }
+//   }
+//   .wrapper-bar > .navigation-m {
+//     margin: 0 15px;
+//   }
+//   .wrapper-bar > .entry {
+//     margin-left: 15px;
+//   }
+// }
 // "Colors & Type"
 .content-wrapper_two-columns {
   display: flex;

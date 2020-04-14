@@ -1,7 +1,9 @@
 .navigation-m {
-  width: 100%;
+  
   max-width: 528px;
   min-width: 420px;
+  width: 528px;
+  // width: 45.51%;
   // движок - раскрывает, закрывает подменю
   .sub {
     &.active .submenu {

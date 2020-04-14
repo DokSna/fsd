@@ -10,24 +10,28 @@ block variables
 block head
   //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 
-block content
+//- block content
   block var
     - var userLogin = 0;
   include ../basis/bar/bar
     block bar-content
       .wrapper-bar
-        include ../blocks/logo-toxin/logo-toxin
+        .wrapper-logo-toxin
+          include ../blocks/logo-toxin/logo-toxin
         include ../blocks/user-login/user-login
-        include ../blocks/navigation-m/navigation-m
+        .wrapper-navigation
+          include ../blocks/navigation-m/navigation-m
 
   .indent
     block var
       - var userLogin = 1;
     include ../basis/bar/bar
       block bar-content
-        .wrapper-bar
+      .wrapper-bar
+        .wrapper-logo-toxin
           include ../blocks/logo-toxin/logo-toxin
-          include ../blocks/user-login/user-login
+        include ../blocks/user-login/user-login
+        .wrapper-navigation
           include ../blocks/navigation-m/navigation-m
 
   //- .indent.z-index

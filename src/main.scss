@@ -29,34 +29,9 @@ html {
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
-  // Mobile - First
   @media (min-width: 1440px) {
     font-size: 16px;
   }
-  // Desktop - First
-  // @media all and (min-width: $comp-1920) {
-  //   font-size: 16px;
-  // }
-  // // @media all and (max-width: $comp-1440) {
-  // //   font-size: 14px;
-  // // }
-  // // // Цифровое значение равное исходным на макете
-  // @media all and (max-width: $screenWidth) {
-  //   font-size: $mainFontSize;
-  // }
-  // // 
-  // @media all and (max-width: $comp-980) {
-  //   font-size: 13px;
-  // }
-  // @media all and (max-width: $table-768) {
-  //   font-size: 12px;
-  // }
-  // @media all and (max-width: $phone-480) {
-  //   font-size: 11px;
-  // }
-  // @media all and (max-width: $phone-320) {
-  //   font-size: 10px;
-  // }
 }
 
 html,
@@ -71,10 +46,21 @@ body {
   font-size: $mainFontSize;
   color: $mainFontColor;
 }
-
+// максимальная ширина макета
+.screenWidth-1440 {
+  width: 1440px;
+  margin: auto;
+}
+.screenWidth-1160 {
+  max-width: 1160px;
+  margin: auto;
+  @media screen and (max-width: 1440px) {
+    width: 80.5%;
+  }
+}
 // Прижимаем Footer к низу.
 .body-wrapper {
-  max-width: 1440px;
+  // max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

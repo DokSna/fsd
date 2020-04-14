@@ -1,35 +1,13 @@
 .bar {
   width: 100%;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-}
-.bar_wrapper {
   min-height: 70px;
-  // padding-top: 15px;
-  // padding-bottom: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  
-  // padding-right: 370px;
-}
-// .bar_wrapper > * {
-//   flex: 1 1 528px;
-// }
-// logo-toxin, navigation, user-login
-.nav-bar_indent-left {
-  .entry {
-    margin-left: 30px;
+  .bar_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 70px;
   }
-  .user {
-    margin-left: 29px;
-  }
-}
-.nav-bar_wrapper-right {
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  // width: 758px;
 }

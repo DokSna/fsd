@@ -1,72 +1,33 @@
 .navigation-m
   nav
     ul
-      li
-        a.navigation-m_link-active(href="link.html") Home
       li.navigation-m_cor
+        a.navigation-m_link-active(href="link.html") Home
+      li.navigation-m_cor-2
         a(href="link.html") About Us
-      li.navigation-m_link-group.navigation-m_cor-2
-        a(href="link.html", onclick="menuOpen('navigation-m_1');return(false)") Services
+      li.sub.navigation-m_cor-3
+        .navigation-m_link-group Services
           img(src="assets/blocks/navigation-m/arrow-b.png" alt="стрелка - указатель")
-        ul#navigation-m_1
+        ul.submenu
           li
             a(href="link.html") Service 1
           li
             a(href="link.html") Service 2
           li
             a(href="link.html") Service 3
-      li.navigation-m_cor-3
+      li
         a(href="link.html") Careers
-      li.navigation-m_cor-4
+      li
         a(href="link.html") News
       li
         a(href="link.html") Documentation
 
-script(type="text/javascript").
-  var m_id = new Array('navigation-m_1');
-  listStart = function allclose() {
-  for (i = 0; i < m_id.length; i++) {
-  document.getElementById(m_id[i]).style.display = "none";
-  }
-  }
-  function menuOpen(id) {
-  for (i = 0; i < m_id.length; i++) {
-  if (id != m_id[i]) {
-  document.getElementById(m_id[i]).style.display = "none";
-  }
-  }
-  if (document.getElementById(id).style.display == "block") {
-  document.getElementById(id).style.display = "none";
-  } else {
-  document.getElementById(id).style.display = "block";
-  }
-  }
-  window.onload = listStart;
-
-//- script(type="text/javascript" src="assets/blocks/navigation-m/navigation-m.js")
-
-//- nav
-//-   ul
-//-     li
-//-       a(href="link.html", onclick="menuOpen("s_mn_1");return(false)") Пункт №1
-//-       ul#s_mn_1
-//-         li
-//-           a(href="link.html") Подпункт меню №1
-//-         li
-//-           a(href="link.html") Подпункт меню №2
-//-     li
-//-       a(href="link.html", onclick="menuOpen("s_mn_2");return(false)") Пункт №2
-//-       ul#s_mn_2
-//-         li
-//-           a(href="link.html") Подпункт меню №1
-//-         li
-//-           a(href="link.html") Подпункт меню №2
-//-     li
-//-       a(href="link.html", onclick="menuOpen("s_mn_3");return(false)") Пункт №3
-//-       ul#s_mn_3
-//-         li
-//-           a(href="link.html") Подпункт меню №1
-//-         li
-//-           a(href="link.html") Подпункт меню №2
-//-         li
-//-           a(href="link.html") Подпункт меню №3
+script(type='text/javascript').
+  document.addEventListener('DOMContentLoaded', function(){
+    let elmns = document.querySelectorAll('.sub');
+    elmns.forEach((element) => {
+      console.log(element)
+      element.onclick = function()
+      {element.classList.toggle('active')
+    }})
+  })

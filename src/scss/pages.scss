@@ -1,19 +1,3 @@
-// отступ по бокам
-.side-indent {
-  // padding-left: 140px;
-  // padding-right: 140px;
-  // padding-left: gum(140);
-  // padding-right: gum(140);
-  // @media all and (max-width: $comp-980) {
-  //   padding-left: gum(70);
-  //   padding-right: gum(70);
-  // }
-  margin: auto;
-  // @media (min-width: 550px) {
-  //   max-width: 80.5%;
-  // }
-}
-
 // pageClass
 // "Headers & Footers"
 .pageClass-GreyBackground {
@@ -38,16 +22,17 @@
 // h-&-f
 .wrapper-bar {
   // width: 96%;
+  width: 100%;
   display: flex;
   // flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding-top: 15px;
   @media (min-width: 768px) {
     flex-wrap: nowrap;
-    width: 80.5%;
-    justify-content: space-around;
+    // width: 80.5%;
+    justify-content: space-between;
     padding-top: 0;
     min-width: 70px;
   }
@@ -56,11 +41,12 @@
   //   flex-basis: 528px;
   // }
   .navigation-m {
-    margin-top: 15px;
+    // margin-top: 15px;
+    margin: 15;
     display: flex;
     // flex-wrap: wrap;
     @media (min-width: 768px) {
-      margin-top: 0;
+      // margin: 0 15;
       // margin-right: 35px;
       nav > ul {
         display: flex;
@@ -84,7 +70,10 @@
     }
   }
   .wrapper-bar > .navigation-m {
-    margin: 0 30px;
+    margin: 0 15px;
+  }
+  .wrapper-bar > .entry {
+    margin-left: 15px;
   }
 }
 // "Colors & Type"

@@ -1,154 +1,84 @@
-// убираем отступы у всех дочерних элементов
-.navigation-m * {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  // nav {
-  //   margin: auto;
-  // }
-}
-// // убираем маркеры у списка
-.navigation-m ul {
-  list-style: none;
- a {
-    text-decoration: none;
-  }
-}
 .navigation-m {
   width: 100%;
+  max-width: 528px;
+  min-width: 420px;
+  // движок - раскрывает, закрывает подменю
+  .sub {
+    &.active .submenu {
+      display: flex;
+      flex-direction: column;
+      background: gray;
+    }
+    &menu {
+      display: none;
+      white-space: nowrap;
+    }
+  }
+  // убираем отступы у всех дочерних элементов
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  // убираем маркеры у списка
+  ul {
+    list-style: none;
+    a {
+      text-decoration: none;
+    }
+  }
   a.navigation-m_link-active {
     font-weight: bold;
     color: rgba(31, 32, 65, 0.75);
   }
-  // max-width: 528px;
-  // width: 600px;
+  a.navigation-m_link-active:hover {
+    color: #8ba4f9;
+  }
+  nav > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
   nav,
   ul,
-  li,
   a {
-    margin: auto;
     width: 100%;
-  }  
-  a {
-    display: flex;
-    height: 70px;
-    align-items: center;
-    justify-content: center;
     letter-spacing: -0.01em;
-    box-shadow: 0 10px 20px rgba(31,32,65,0.3);
-    white-space: nowrap;
   }
-  img {
-    margin-left: 6px;
+  .navigation-m_link-group {
+    cursor: pointer;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
+    letter-spacing: -0.01em;
+    img {
+      margin-left: 5px;
+    }
   }
-  ul > * {
-    display: flex;
-    flex-wrap: wrap;
+  .navigation-m_link-group:hover {
+    color: #8ba4f9;
   }
-}
-
-.navigation-m {
-  @media (min-width: 768px) {
-    width: 528px;
-    > a {
-      height: auto;
-    }
-    nav > ul {
-      // width: 556px;
-      display: flex;
-      justify-content: space-between;
-      margin: 0;
-    }
-    li {
-      width: auto;
-      margin: 0;
-    }
-    nav > ul > li > a {
-      box-shadow: none;
-      // padding: 10px;
-    }
-    // a {
-    //   padding: 0 10px;
-    // }
-    .navigation-m_link-group {
-      position: relative;
-      // > li,
-      ul {
-        position: absolute;
-        top: 70px;
-      }
-      // ul > li,
-      li > a {
-        height: 35px;
-      }
-      display: flex;
-      justify-content: space-between;
-      padding-right: 2px;
-    }
-    // корректируем по Perfect Pixel
-    .navigation-m_cor {
-      position: relative;
-      left: 2px;
-    }
-    .navigation-m_cor-2 {
-      position: relative;
-      left: 3px;
-    }
-    .navigation-m_cor-3 {
-      position: relative;
-      right: 2px;
-    }
-    .navigation-m_cor-4 {
-      position: relative;
-      right: 01px;
-    }
+  .submenu {
+    position: absolute;
+    width: 1em;
   }
 }
-// .navigation-m_link-group {
-//   position: relative;
-//   // > li,
-//   ul {
-//     position: absolute;
-//     top: 70px;
-//   }
-//   // ul > li,
-//   a {
-//     height: 35px;
-//   }
-// }
-// делаем список меню - горизонтальным
-// .navigation-m > ul {
-//   // min-width: 150px;
-//   // margin: auto;
-//   display: flex;
-//   // flex-direction: column;
-//   align-items: center;
-//   flex-wrap: wrap;
-//   // flex-basis: 1 1 260;
-//   // @media (min-width: 480px) {
-//   //   // display: flex;
-//   //   flex-direction: row;
-//   //   justify-content: space-between;
-//   //   align-items: center;
-//   //   min-width: 480px;
-//   //   width: 528px;
-//   //   height: 20px;
-//   //   margin: 20px;
-//   // }
-// }
-// .navigation-m {
-//   li {
-//     width: 100%;
-//     // .navigation-m__link_group,
-//     a {
-//       display: flex;
-//       height: 60px;
-//       width: 100%;
-//       align-items: center;
-//       justify-content: center;
-//     }
-//   }
-// }
-// .navigation-m__link_group {
-//   cursor: pointer;
-// }
+// -----------------
+// корректируем по Perfect Pixel
+.navigation-m_cor {
+  position: relative;
+  left: 1px;
+}
+.navigation-m_cor-2 {
+  position: relative;
+  left: 2px;
+}
+.navigation-m_cor-3 {
+  position: relative;
+  left: 3px;
+}

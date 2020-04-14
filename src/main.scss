@@ -1,29 +1,29 @@
-// basis 
-@import 'scss/vars.scss';
-@import 'scss/mixins.scss';
-@import 'scss/pages.scss';
-@import 'fonts/fonts.scss';
-@import 'basis/header/header.scss';
-@import 'basis/footer-links/footer-links.scss';
-@import 'basis/bar/bar.scss';
-@import 'basis/footer-creative/footer-creative.scss';
+// basis
+@import "scss/vars.scss";
+@import "scss/mixins.scss";
+@import "scss/pages.scss";
+@import "fonts/fonts.scss";
+@import "basis/header/header.scss";
+@import "basis/footer-links/footer-links.scss";
+@import "basis/bar/bar.scss";
+@import "basis/footer-creative/footer-creative.scss";
 
-// blocks 
-@import 'blocks/copyright/copyright.scss';
-@import 'blocks/social/social.scss';
-@import 'blocks/logo/logo.scss';
-@import 'blocks/colors/colors.scss';
-@import 'blocks/type/type.scss';
-@import 'blocks/page-links/page-links.scss';
-@import 'blocks/logo-toxin/logo-toxin.scss';
-@import 'blocks/navigation/navigation.scss';
-@import 'blocks/link-works/link-works.scss';
-@import 'blocks/entry/entry.scss';
-@import 'blocks/user/user.scss';
-@import 'blocks/about/about.scss';
-@import 'blocks/links/links.scss';
-@import 'blocks/subscription/subscription.scss';
-@import 'blocks/navigation-m/navigation-m.scss';
+// blocks
+@import "blocks/copyright/copyright.scss";
+@import "blocks/social/social.scss";
+@import "blocks/logo/logo.scss";
+@import "blocks/colors/colors.scss";
+@import "blocks/type/type.scss";
+@import "blocks/page-links/page-links.scss";
+@import "blocks/logo-toxin/logo-toxin.scss";
+@import "blocks/navigation/navigation.scss";
+@import "blocks/link-works/link-works.scss";
+@import "blocks/entry/entry.scss";
+@import "blocks/user/user.scss";
+@import "blocks/about/about.scss";
+@import "blocks/links/links.scss";
+@import "blocks/subscription/subscription.scss";
+@import "blocks/navigation-m/navigation-m.scss";
 
 html {
   font-size: $mainFontSize;
@@ -36,11 +36,12 @@ html {
 
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: white;
   // Font
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: $mainFontSize;
@@ -48,19 +49,25 @@ body {
 }
 // максимальная ширина макета
 .screenWidth-1440 {
-  width: 1440px;
+  max-width: 1440px;
   margin: auto;
 }
+// .s {
+//   padding-left: 9.72%;
+//   padding-right: gum(140);
+// }
 .screenWidth-1160 {
   max-width: 1160px;
-  margin: auto;
-  @media screen and (max-width: 1440px) {
-    width: 80.5%;
-  }
+  // margin: auto;
+  // width: 80.5%;
 }
+// @media (max-width: 1090px) {
+//   .screenWidth-1160 {
+//     width: auto;
+//   }
+// }
 // Прижимаем Footer к низу.
 .body-wrapper {
-  // max-width: 1440px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -72,19 +79,23 @@ body {
 
 // оформление ссылок
 a {
-color: rgba(31, 32, 65, 0.5);
+  color: rgba(31, 32, 65, 0.5);
 }
-a:link {  // не посещённая ссылка
-color: rgba(31, 32, 65, 0.5);
+a:link {
+  // не посещённая ссылка
+  color: rgba(31, 32, 65, 0.5);
 }
-a:visited { // посещённая ссылка
-color: rgba(31, 32, 65, 0.5);
+a:visited {
+  // посещённая ссылка
+  color: rgba(31, 32, 65, 0.5);
 }
-a:hover { // ссылка, на которую наведен курсор
-  color: #8BA4F9;
+a:hover {
+  // ссылка, на которую наведен курсор
+  color: #8ba4f9;
 }
-a:active {  // активная ссылка (совершается клик, или удерживается кнопка мыши)
-  color: #66D2EA;
+a:active {
+  // активная ссылка (совершается клик, или удерживается кнопка мыши)
+  color: #66d2ea;
 }
 
 // времменные стили видеть границы блоков(для dev)

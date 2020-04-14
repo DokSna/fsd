@@ -2,9 +2,9 @@
 // "Headers & Footers"
 .pageClass-GreyBackground {
   background-color: #e5e5e5;
-  main {
-    padding-top: 10px;
-  }
+  // main {
+  //   padding-top: 10px;
+  // }
   .indent {
     margin-top: 40px;
   }
@@ -26,20 +26,48 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  @media (min-width: 768px) {
-    > :nth-child(2) {
-      order: 1;
-    }
+  > :nth-child(2) {
+    order: 1;
   }
   .wrapper-logo-toxin {
-    // width: 34.83%;
     flex: 1;
   }
+  .wrapper-user-login .user {
+    flex-shrink: 10;
+  }
   .wrapper-navigation {
-    // margin-right: 30px;
-    margin: 0 2.58%;
+    margin: 0 guma(30, 1160);
   }
 }
+@media (max-width: 1090px) {
+  .bar-wrapper {
+    max-width: 877.45px;
+    // margin: 20.64%;
+  }
+}
+@media (max-width: 950px) {
+  .wrapper-bar {
+    width: 570px;
+    margin: 15px auto;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    > :nth-child(2) {
+      order: 0;
+    }
+    .wrapper-navigation {
+      margin: 30px auto 15px;
+    }
+  }
+}
+// // @media (min-width: 768px) {
+// // }
+
+// .wrapper-navigation {
+//   // margin-right: 30px;
+//   margin: 0 30px;
+//   // margin: 0 2.58%;
+// }
+
 // .wrapper-bar:nth-child(1) {
 //   // flex: 1 0 auto;
 //   flex-grow: 1;

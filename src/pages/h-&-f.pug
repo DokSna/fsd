@@ -10,7 +10,7 @@ block variables
 block head
   //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
 
-//- block content
+block content
   block var
     - var userLogin = 0;
   include ../basis/bar/bar
@@ -18,7 +18,8 @@ block head
       .wrapper-bar
         .wrapper-logo-toxin
           include ../blocks/logo-toxin/logo-toxin
-        include ../blocks/user-login/user-login
+        .wrapper-user-login
+          include ../blocks/user-login/user-login
         .wrapper-navigation
           include ../blocks/navigation-m/navigation-m
 

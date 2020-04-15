@@ -2,7 +2,7 @@
   // width: 332px;
   height: 18px;
 
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -11,4 +11,9 @@
 
   /* Dark 75% */
   color: rgba(31, 32, 65, 0.75);
+}
+@media (max-width: 550px) {
+  .copyright {
+    padding: 0 10px;
+  }
 }

@@ -15,22 +15,25 @@ block content
     - var userLogin = 0;
   include ../basis/bar/bar
     block bar-content
-      include ../blocks/logo-toxin/logo-toxin
-      .nav-bar_wrapper-right
-        include ../blocks/navigation/navigation
-        .nav-bar_indent-left
+      .wrapper-bar
+        .wrapper-logo-toxin
+          include ../blocks/logo-toxin/logo-toxin
+        .wrapper-user-login
           include ../blocks/user-login/user-login
+        .wrapper-navigation
+          include ../blocks/navigation-m/navigation-m
 
-  .indent.z-index
+  .indent
     block var
       - var userLogin = 1;
     include ../basis/bar/bar
       block bar-content
-        include ../blocks/logo-toxin/logo-toxin
-        .nav-bar_wrapper-right
-          include ../blocks/navigation/navigation
-          .nav-bar_indent-left
-            include ../blocks/user-login/user-login
+      .wrapper-bar
+        .wrapper-logo-toxin
+          include ../blocks/logo-toxin/logo-toxin
+        include ../blocks/user-login/user-login
+        .wrapper-navigation
+          include ../blocks/navigation-m/navigation-m
 
   include ../basis/footer-links/footer-links
 
@@ -40,10 +43,10 @@ block content
         include ../blocks/copyright/copyright
         .indent-right-2px
           include ../blocks/social/social
+
   .indent
     include ../basis/footer-creative/footer-creative
       block footer-creative_content
-          //- .footer-creative_wrapper
           include ../blocks/logo-toxin/logo-toxin
           p Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
           .social_indent-top

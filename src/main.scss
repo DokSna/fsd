@@ -61,11 +61,16 @@ body {
   // margin: auto;
   // width: 80.5%;
 }
-@media (max-width: 1280px) {
+@media (min-width: 550px) and (max-width: 1280px) {
   .screenWidth-1160 {
-    margin: 0 guma(60, 1280)
+    margin: 0 guma(60, 1280);
   }
 }
+// @media (max-width: 550px) {
+//   .screenWidth-1160 {
+//     margin: 0px;
+//   }
+// }
 // @media (max-width: 1090px) {
 //   .screenWidth-1160 {
 //     width: auto;

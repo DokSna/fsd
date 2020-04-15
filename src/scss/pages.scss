@@ -58,6 +58,17 @@
     .wrapper-navigation {
       margin: 30px auto 15px;
     }
+    .wrapper-logo-toxin {
+      flex: 0;
+    }
+  }
+}
+@media (max-width: 550px) {
+  .wrapper-bar {
+    width: 98%;
+  }
+  .wrapper-logo-toxin {
+    margin: 15px 0;
   }
 }
 // // @media (min-width: 768px) {

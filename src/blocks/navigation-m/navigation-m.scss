@@ -1,5 +1,4 @@
 .navigation-m {
-  
   max-width: 528px;
   min-width: 420px;
   width: 528px;
@@ -68,6 +67,33 @@
   .submenu {
     position: absolute;
     width: 1em;
+  }
+}
+@media (max-width: 550px) {
+  .navigation-m {
+    // max-width: 528px;
+    min-width: 300px;
+    width: 100%;
+    nav > ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+    }
+    li {
+      height: 30px;
+    }
+    .submenu {
+      position: relative;
+      top: 12px;
+      width: 100%;
+      a {
+        // height: 35px;
+        padding: 8px;
+        background-color: rgb(216, 216, 216);
+      }
+    }
   }
 }
 // -----------------

@@ -35,6 +35,15 @@ block content
         .wrapper-navigation
           include ../blocks/navigation-m/navigation-m
 
+  include ../basis/footer-links/footer-links
+
+  .indent-1px-top
+    include ../basis/bar/bar
+      block bar-content
+        include ../blocks/copyright/copyright
+        .indent-right-2px
+          include ../blocks/social/social
+
   //- .indent.z-index
   //-   block var
   //-     - var userLogin = 1;

@@ -52,10 +52,6 @@ body {
   max-width: 1440px;
   margin: auto;
 }
-// .s {
-//   padding-left: 9.72%;
-//   padding-right: gum(140);
-// }
 .screenWidth-1160 {
   max-width: 1160px;
   // margin: auto;
@@ -66,16 +62,7 @@ body {
     margin: 0 guma(60, 1280);
   }
 }
-// @media (max-width: 550px) {
-//   .screenWidth-1160 {
-//     margin: 0px;
-//   }
-// }
-// @media (max-width: 1090px) {
-//   .screenWidth-1160 {
-//     width: auto;
-//   }
-// }
+
 // Прижимаем Footer к низу.
 .body-wrapper {
   margin: 0 auto;

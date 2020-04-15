@@ -13,7 +13,7 @@
 }
 .links a {
   text-decoration: none;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -23,12 +23,20 @@
 .links ul li:first-child {
   margin-top: 0px;
   a {
-  font-family: 'Montserrat';
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1f2041;
+  }
+  a:hover {
+    color: #8ba4f9;
+  }
+}
+@media (max-width: 410px) {
+  .links ul li:first-child {
+    text-align: center;
   }
 }

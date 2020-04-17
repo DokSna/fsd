@@ -8,7 +8,7 @@
 @import "basis/bar/bar.scss";
 @import "basis/footer-creative/footer-creative.scss";
 
-// blocks
+// blocks 
 @import "blocks/copyright/copyright.scss";
 @import "blocks/social/social.scss";
 @import "blocks/logo/logo.scss";
@@ -24,6 +24,8 @@
 @import "blocks/links/links.scss";
 @import "blocks/subscription/subscription.scss";
 @import "blocks/navigation-m/navigation-m.scss";
+@import "blocks/text-field/text-field.scss";
+@import "blocks/text-field_focus/text-field_focus.scss";
 
 html {
   font-size: $mainFontSize;

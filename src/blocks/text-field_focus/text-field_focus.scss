@@ -1,0 +1,58 @@
+.text-field_focus {
+  label {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 320px;
+    height: 67px;
+  }
+  input {
+    outline: none;
+    width: 320px;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    // text inside
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(31, 32, 65, 0.75);
+    padding-left: 14px;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  input::placeholder {
+    color: rgba(31, 32, 65, 0.25);
+  }
+  input:hover,
+  input:focus {
+    border: 1px solid rgba(31, 32, 65, 0.5);
+  }
+  .text-field_header {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #1f2041;
+    margin: 0;
+  }
+  .text-field_description {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+    text-transform: uppercase;
+    color: rgba(31, 32, 65, 0.5);
+    padding-left: 3px;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+}

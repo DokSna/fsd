@@ -9,7 +9,7 @@
       .calc-item
         .calc-item__title взрослые
         .calc-item__wrapper
-          .calc-item__minus -
+          .calc-item__minus(onclick="plusik()") -
           input(type="text" name="textview" readonly).calc-item__value
           .calc-item__plus(onclick="plus()") +
       .calc-buttons
@@ -17,8 +17,14 @@
           input(type="button" value = "очистить")
         .submit
           input(type="submit", value="применить")
+      .testik
+      .knopka(onclick="plusik()")
 
 script(type='text/javascript').
-  function plus() {
-  document.form.textview.value = Number(document.form.textview.value) + 1;
+  //- function plus() {
+  //- document.form.textview.value = Number(document.form.textview.value) + 1;
+  //- }
+  function plusik() {
+  //- document.form.textview.value = Number(document.form.textview.value) + 1;
+  document.querySelector('.testik').textContent = Number(document.querySelector('.testik').textContent) + 1;
   }

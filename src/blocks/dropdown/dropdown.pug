@@ -1,0 +1,24 @@
+.dropdown
+  form(action="", name="form" method="get")
+    .dropdown__header dropdown
+    .dropdown__info
+      input(type="text" name="guests" readonly placeholder="Сколько гостей")
+      button(type="button")
+        img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
+    .dropdown__calculator
+      .calc-item
+        .calc-item__title взрослые
+        .calc-item__wrapper
+          .calc-item__minus -
+          input(type="text" name="textview" readonly).calc-item__value
+          .calc-item__plus(onclick="plus()") +
+      .calc-buttons
+        .clear
+          input(type="button" value = "очистить")
+        .submit
+          input(type="submit", value="применить")
+
+script(type='text/javascript').
+  function plus() {
+  document.form.textview.value = Number(document.form.textview.value) + 1;
+  }

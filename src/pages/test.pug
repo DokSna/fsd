@@ -1,5 +1,22 @@
 extends ../basis/layout/main
 
+block head
+
+  //- script(type='text/html' src="../lib/jquery-3.5.0.js").
+  //- script(type='text/javascript').
+  //-   alert("Привет JavaScript");
+  //- script(type='text/javascript').
+  //-   $(document).ready(function(){
+  //-     $(".testik").append("Я сдесь, всё ок.")
+  //-   });
+  //- jQuary(document).ready(function(){
+  //-   $(".testik").append("p")
+  //- });
+
 block content
   .test_center
     include ../blocks/text-field/text-field
+    include ../blocks/subscription/subscription
+    include ../blocks/dropdown/dropdown
+
+  .testik

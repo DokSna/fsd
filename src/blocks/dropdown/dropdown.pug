@@ -9,22 +9,28 @@
       .calc-item
         .calc-item__title взрослые
         .calc-item__wrapper
-          .calc-item__minus(onclick="plusik()") -
-          input(type="text" name="textview" readonly).calc-item__value
+          .calc-item__minus(onclick="minus()") -
+          input(type="text" name="adults"  placeholder="0").calc-item__value
           .calc-item__plus(onclick="plus()") +
       .calc-buttons
         .clear
           input(type="button" value = "очистить")
         .submit
           input(type="submit", value="применить")
-      .testik
-      .knopka(onclick="plusik()")
 
 script(type='text/javascript').
-  //- function plus() {
-  //- document.form.textview.value = Number(document.form.textview.value) + 1;
-  //- }
-  function plusik() {
-  //- document.form.textview.value = Number(document.form.textview.value) + 1;
-  document.querySelector('.testik').textContent = Number(document.querySelector('.testik').textContent) + 1;
+  document.form.adults.value = 0;
+  function plus() {
+  document.form.textview.value = Number(document.form.textview.value) + 1;
+  }
+  function minus() {
+    let itemNum = document.form.textview.value;
+    if (itemNum > 0) {
+      itemNum = Number(document.form.textview.value) - 1;
+    }
+    //- (itemNum >= 0) ? document.form.textview.value = itemNum;
+    if (itemNum > 0) {
+      document.form.textview.value = itemNum;
+    }
+    else document.form.textview.value = 0;
   }

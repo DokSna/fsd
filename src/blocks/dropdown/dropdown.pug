@@ -12,12 +12,8 @@
           button.calc-item__operator(type='button', onclick='this.nextElementSibling.stepDown()') -
           input.raz.calc-item__value(type='number', min='0', max='999', value='0')
           button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +
-      .calc-item
-        .calc-item__title дети
-        .calc-item__wrapper
-          button.calc-item__operator(type='button', dd name="mn" onclick='this.nextElementSibling.stepDown()') -
-          input.raz.calc-item__value(type='number', min='0', max='999', value='0')
-          button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +
+      include ../calc-item/calc-item
+      +calc-item("childrens", "Детишки")
       .calc-item
         .calc-item__title младенцы
         .calc-item__wrapper

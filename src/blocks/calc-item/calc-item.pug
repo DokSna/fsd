@@ -1,0 +1,15 @@
+.calc-item
+  .calc-item__title дети
+  .calc-item__wrapper
+    button.calc-item__operator(type='button', dd name="mn" onclick='this.nextElementSibling.stepDown()') -
+    input.raz.calc-item__value(type='number', min='0', max='999', value='0')
+    button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +
+
+mixin calc-item(name, text)
+  .calc-item
+    .calc-item__title
+      text=text
+    .calc-item__wrapper
+      button.calc-item__operator(type='button', dd name="mn" onclick='this.nextElementSibling.stepDown()') -
+      input.raz.calc-item__value(type='number', name = name, min='0', max='999', value='0')
+      button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +

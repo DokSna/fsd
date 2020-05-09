@@ -12,33 +12,7 @@ include ../calc-item/calc-item
       +calc-item("children", "дети")
       +calc-item("babies", "младенцы")
       .calc-buttons
-        .clear
+        .calc-buttons_clear
           input(type="button" value = "очистить")
-        .submit
-          input(type="submit", value="применить")
-
-//- script(type='text/javascript').
-//-   $(document).ready(function) {
-//-     $(.calc-item__wrapper).addClass("calc-item__operator-null");
-//-   }
-//- 
-  //- let value = document.form.mn.value;
-  //- let nullik = document.querySelector(.calc-item__wrapper>input);
-  //- if (nullik < 1) {
-  //-   document.form.mn.value = 'calc-item__operator-null';
-  //- }
-  //- //- document.form.adults.value = 0;
-  //- function plus() {
-  //- document.form.adults.value = Number(document.form.adults.value) + 1;
-  //- }
-  //- function minus() {
-  //-   let itemNum = document.form.adults.value;
-  //-   if (itemNum > 0) {
-  //-     itemNum = Number(document.form.adults.value) - 1;
-  //-   }
-  //-   //- (itemNum >= 0) ? document.form.adults.value = itemNum;
-  //-   if (itemNum > 0) {
-  //-     document.form.adults.value = itemNum;
-  //-   }
-  //-   else document.form.adults.value = 0;
-  //- }
+        .calc-buttons_submit
+          input(type="button", value="применить")

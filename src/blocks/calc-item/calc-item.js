@@ -56,14 +56,6 @@
 //   }
 // }
 
-// прослушиватель событий, когда DOM загружен
-// document.addEventListener("DOMContentLoaded", function gen(ob) {
-//   // calcItems(this);
-//   let num = Math.random();
-//   ob.value = num;
-//   console.log(num);
-// });
-
 // function calcItems(it) {
 //   debugger;
 //   // let roditel = it.parentNode;
@@ -102,6 +94,11 @@ function frash() {
     }
   }
 }
+
+// прослушиватель событий, когда DOM загружен
+document.addEventListener("DOMContentLoaded", function gen(ob) {
+  frash();
+});
 
 function funDown() {
   let num = this.nextElementSibling;

@@ -1,3 +1,5 @@
+include ../calc-item/calc-item
+
 .dropdown
   form(action="", name="form" method="get")
     .dropdown__header dropdown
@@ -6,30 +8,19 @@
       button(type="button")
         img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
     .dropdown__calculator
-      .calc-item
-        .calc-item__title взрослые
-        .calc-item__wrapper
-          button.calc-item__operator(type='button', onclick='this.nextElementSibling.stepDown()') -
-          input.raz.calc-item__value(type='number', min='0', max='999', value='0')
-          button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +
-      include ../calc-item/calc-item
-      +calc-item("childrens", "Детишки")
-      .calc-item
-        .calc-item__title младенцы
-        .calc-item__wrapper
-          button.calc-item__operator.calc-item__operator-null(type='button', onclick='this.nextElementSibling.stepDown()') -
-          input.raz.calc-item__value(type='number', min='0', max='999', value='0')
-          button.calc-item__operator(type='button', onclick='this.previousElementSibling.stepUp()') +
+      +calc-item("adults", "взрослые")
+      +calc-item("children", "дети")
+      +calc-item("babies", "младенцы")
       .calc-buttons
         .clear
           input(type="button" value = "очистить")
         .submit
           input(type="submit", value="применить")
 
-script(type='text/javascript').
-  $(document).ready(function) {
-    $(.calc-item__wrapper).addClass("calc-item__operator-null");
-  }
+//- script(type='text/javascript').
+//-   $(document).ready(function) {
+//-     $(.calc-item__wrapper).addClass("calc-item__operator-null");
+//-   }
 //- 
   //- let value = document.form.mn.value;
   //- let nullik = document.querySelector(.calc-item__wrapper>input);

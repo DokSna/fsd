@@ -23,7 +23,8 @@ function dropDownsys() {
 
 document.addEventListener('DOMContentLoaded', dropDownsys())
 
-// let calcClick = document.querySelectorAll(".calc-item__operator");
-// for (i = 0; i < calcClick.length; i++) {
-//   calcClick[i].addEventListener("click", dropDownsys());
-// }
+let calcClick = document.querySelectorAll(".calc-item__operator");
+// debugger
+for (i = 0; i < calcClick.length; i++) {
+  calcClick[i].addEventListener("click", dropDownsys);
+}

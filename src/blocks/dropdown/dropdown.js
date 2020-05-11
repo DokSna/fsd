@@ -1,13 +1,3 @@
-// let dropDowns = document.querySelectorAll(".dropdown");
-// for (i = 0; i < dropDowns.length; i++) {
-//   calcItems = dropDowns[i].querySelectorAll(".calc-item__value");
-//   let calcItemsSum = 0;
-//   for (j = 0; j < calcItems.length; j++) {
-//     calcItemsSum += Number(calcItems[j].value);
-//   }
-//   let info = dropDowns[i].querySelector(".dropdown__info > input");
-//   info.value = calcItemsSum;
-// }
 function dropDownsys() {
   let dropDowns = document.querySelectorAll(".dropdown");
   for (i = 0; i < dropDowns.length; i++) {
@@ -21,33 +11,47 @@ function dropDownsys() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', dropDownsys())
+function dropDownsays() {
+  // debugger;
+  let dropDowns = document.querySelectorAll(".dropdown");
+  dropDowns.forEach(function(dropDown) {
+    let calcItems = dropDown.querySelectorAll(".calc-item__value");
+    let adultsNum, childrenNum, babiesNum;
+    calcItems.forEach(function(calcItem) {
+      if ("adults" == calcItem.getAttribute('name')) {
+        adultsNum = Number(calcItem.value);
+      }
+      if ("children" == calcItem.getAttribute('name')) {
+        childrenNum = Number(calcItem.value);
+      }
+      if ("babies" == calcItem.getAttribute('name')) {
+        babiesNum = Number(calcItem.value);
+      }
+    }
+    )
+    let info = dropDown.querySelector(".dropdown__info > input");
+    info.value = adultsNum + childrenNum + " гостей" + ", " + babiesNum + " младенцев";
+  });
+}
+
+document.addEventListener('DOMContentLoaded', dropDownsays())
 
 let calcClick = document.querySelectorAll(".calc-item__operator");
-// debugger
 for (i = 0; i < calcClick.length; i++) {
-  calcClick[i].addEventListener("click", dropDownsys);
+  calcClick[i].addEventListener("click", dropDownsays);
 }
 
 function calcItemClear(e) {
   let parentCalcButtons = this.parentElement;
   let parentCalcItems = parentCalcButtons.parentElement;
-  // for (i = 0; i < parentCalcItems.length; i++) {
     let CalcItems = parentCalcItems.querySelectorAll('.calc-item__value');
-    // for (j = 0; j < CalcItems.length; j++) {
-    //   CalcItems[j].value = 0;
-    // }
     CalcItems.forEach(item => item.value = 0);
-    dropDownsys();
+    dropDownsays();
     frash();
-  // }
 }
 
 let calcButtonsClear = document.querySelectorAll('.calc-buttons_clear');
 calcButtonsClear.forEach(el => el.addEventListener('click', calcItemClear));
-// for (i = 0; i < calcButtonsClear.length; i++) {
-//   calcButtonsClear[i].addEventListener("click", console.log('hi'));
-// }
 
 function frash() {
   let minus = document.querySelectorAll(".calc-item__wrapper");

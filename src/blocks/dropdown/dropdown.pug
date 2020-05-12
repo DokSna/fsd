@@ -1,18 +1,36 @@
 include ../calc-item/calc-item
 
-.dropdown
-  form(action="", name="dropdown" method="get")
-    .dropdown__header dropdown
-    .dropdown__info
-      input(type="text" name="guests" readonly placeholder="Сколько гостей")
-      button(type="button")
-        img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
-    .dropdown__calculator
-      +calc-item("adults", "взрослые")
-      +calc-item("children", "дети")
-      +calc-item("babies", "младенцы")
-      .calc-buttons
-        .calc-buttons_clear
-          input(type="button" value = "очистить")
-        .calc-buttons_submit
-          input(type="button", value="применить")
+//- .dropdown
+//-   form(action="", name="dropdown" method="get")
+//-     .dropdown__header dropdown
+//-     .dropdown__info
+//-       input(type="text" name="guests" readonly placeholder="Сколько гостей")
+//-       button(type="button")
+//-         img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
+//-     .dropdown__calculator
+//-       +calc-item("adults", "взрослые")
+//-       +calc-item("children", "дети")
+//-       +calc-item("babies", "младенцы")
+//-       .calc-buttons
+//-         .calc-buttons_clear
+//-           input(type="button" value = "очистить")
+//-         .calc-buttons_submit
+//-           input(type="button", value="применить")
+
+mixin dropdown(show)
+  .dropdown
+    form(action="", name="dropdown" method="get")
+      .dropdown__header dropdown
+      .dropdown__info
+        input(type="text" name="guests" readonly placeholder="Сколько гостей")
+        button(type="button")
+          img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
+      .dropdown__calculator
+        +calc-item("adults", "взрослые")
+        +calc-item("children", "дети")
+        +calc-item("babies", "младенцы")
+        .calc-buttons
+          .calc-buttons_clear
+            input(type="button" value = "очистить")
+          .calc-buttons_submit
+            input(type="button", value="применить")

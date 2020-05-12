@@ -11,6 +11,7 @@
 //   }
 // }
 
+// склонение слов (1 гость, 2 гостя, 5 гостей)
 function declension(number, a1, b2, c5) {
   let text = "";
   let num1 = number % 10;
@@ -27,6 +28,7 @@ function declension(number, a1, b2, c5) {
   else return text = "";
 }
 
+// заполняем шапку количеством гостей
 function dropDownsays() {
   let dropDowns = document.querySelectorAll(".dropdown");
   dropDowns.forEach(function(dropDown) {
@@ -55,6 +57,23 @@ function dropDownsays() {
       info.value = guests + babiesNums;
     }
     else info.value = "";
+
+    let aClear = dropDown.querySelector('.calc-buttons_clear');
+    if (adultsNum + childrenNum + babiesNum > 0) {
+      aClear.classList.add('calc-buttons_clear-vis');
+    }
+    if (adultsNum + childrenNum + babiesNum == 0) {
+      aClear.classList.remove('calc-buttons_clear-vis');
+    }
+    // скрывать или показывать калькулятор
+    let calculator = dropDown.querySelector('.dropdown__calculator');
+    // if (calculator.getAttribute(data-show) == "show") {
+      // calculator.classList.add('show_calc');
+    // }
+    // else {
+      calculator.classList.remove('dropdown__calculator_show');
+    // }
+    
   });
 }
 
@@ -89,4 +108,15 @@ function frash() {
       minusik.classList.remove("calc-item__operator_null");
     }
   }
+}
+
+// кнопка скрыть/показать калькулятор
+let showCalc = document.querySelectorAll('.dropdown__info > button');
+showCalc.forEach((el) => el.addEventListener('click', funShowCalc));
+
+function funShowCalc(e) {
+  console.log('hello!')
+  let inf = this.parentElement;
+  let calc = inf.nextElementSibling;
+  calc.classList.toggle('dropdown__calculator_show');
 }

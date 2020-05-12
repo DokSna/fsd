@@ -72,6 +72,10 @@
     display: flex;
     flex-direction: column;
     /*~~~~~~~~~~~~~~~~~~~*/
+    visibility: visible;
+  }
+  &__calculator_show {
+    visibility: hidden;
   }
 }
 .calc-buttons {
@@ -93,6 +97,10 @@
     text-transform: uppercase;
     color: rgba(31, 32, 65, 0.5);
     padding: 0;
+    visibility: hidden;
+  }
+  &_clear-vis input {
+    visibility: visible;
   }
   &_submit input {
     font-family: Montserrat;

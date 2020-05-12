@@ -1,5 +1,5 @@
 extends ../basis/layout/main
-
+include ../blocks/dropdown/dropdown
 block head
 
   //- script(type='text/html' src="../lib/jquery-3.5.0.js").
@@ -19,4 +19,6 @@ block content
     include ../blocks/subscription/subscription
     include ../blocks/dropdown/dropdown
     include ../blocks/dropdown/dropdown
+    +dropdown("show")
+    +dropdown()
     h2(onclick="console.log(4)") Привет

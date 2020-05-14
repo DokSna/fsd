@@ -17,8 +17,8 @@ include ../calc-item/calc-item
 //-         .calc-buttons_submit
 //-           input(type="button", value="применить")
 
-mixin dropdown(show)
-  .dropdown(show=show)
+mixin dropdown(show, one, two, three)
+  .dropdown(show=show, one=one, two=two, three=three)
     form(action="", name="dropdown" method="get")
       .dropdown__header dropdown
       .dropdown__info

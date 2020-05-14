@@ -1,3 +1,4 @@
+"use strict"
 // склонение слов (1 гость, 2 гостя, 5 гостей)
 function declension(number, a1, b2, c5) {
   let text = "";
@@ -72,12 +73,30 @@ function dropDownsaysi() {
   dropDowns.forEach(function(dropDown) {
     // свернуть или развернуть dropdown
     if (dropDown.getAttribute("show") == 1) {
-      dropdownCalculator = dropDown.querySelector(".dropdown__calculator");
+      let dropdownCalculator = dropDown.querySelector(".dropdown__calculator");
       dropdownCalculator.classList.toggle("dropdown__calculator_show");
-      inf = dropDown.querySelector('.dropdown__info');
+      let inf = dropDown.querySelector('.dropdown__info');
       inf.classList.toggle("dropdown__info_border");
     }
+    // заранее заполненые поля
+    let one = Number(dropDown.getAttribute("one"));
+    let two = Number(dropDown.getAttribute("two"));
+    let three = Number(dropDown.getAttribute("three"));
+      let Calculator = dropDown.querySelectorAll('.calc-item__wrapper');
+      if (one > 0) {
+        let calcItemInput = Calculator[0].querySelector('input');
+        calcItemInput.value = one;
+      }
+      if (two > 0) {
+        let calcItemInput = Calculator[1].querySelector('input');
+        calcItemInput.value = two;
+      }
+      if (three > 0) {
+        let calcItemInput = Calculator[2].querySelector('input');
+        calcItemInput.value = three;
+      }
   });
+  dropDownsays();
 }
 
 let calcClick = document.querySelectorAll(".calc-item__operator");

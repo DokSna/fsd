@@ -27,9 +27,9 @@ mixin dropdown(mode="guest", show="open", one=0, two=0, three=0)
         button(type="button")
           img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз" )
       .dropdown__calculator
-        +calc-item("adults", "взрослые")
-        +calc-item("children", "дети")
-        +calc-item("babies", "младенцы")
+        +calc-item("one", "взрослые")
+        +calc-item("two", "дети")
+        +calc-item("three", "младенцы")
         .calc-buttons
           .calc-buttons_clear
             input(type="button" value = "очистить")

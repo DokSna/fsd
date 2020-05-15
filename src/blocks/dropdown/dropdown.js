@@ -21,34 +21,51 @@ function dropDownsays() {
   let dropDowns = document.querySelectorAll(".dropdown");
   dropDowns.forEach(function (dropDown) {
     let calcItems = dropDown.querySelectorAll(".calc-item__value");
-    let adultsNum, childrenNum, babiesNum;
+    let OneNum, TwoNum, ThreeNum;
     calcItems.forEach(function (calcItem) {
-      if ("adults" == calcItem.getAttribute("name")) {
-        adultsNum = Number(calcItem.value);
+      if ("one" == calcItem.getAttribute("name")) {
+        OneNum = Number(calcItem.value);
       }
-      if ("children" == calcItem.getAttribute("name")) {
-        childrenNum = Number(calcItem.value);
+      if ("two" == calcItem.getAttribute("name")) {
+        TwoNum = Number(calcItem.value);
       }
-      if ("babies" == calcItem.getAttribute("name")) {
-        babiesNum = Number(calcItem.value);
+      if ("three" == calcItem.getAttribute("name")) {
+        ThreeNum = Number(calcItem.value);
       }
     });
 
+    // перед отправкой склонений слов проверим, не стоит ли mode=room
     let info = dropDown.querySelector(".dropdown__info > input");
-    let babiesNums = declension(babiesNum, " младенец", " младенца", " младенцев");
-    let guests = declension(adultsNum + childrenNum, " гость", " гостя", " гостей");
+    let OneNumText = "";
+    let TwoNumText = "";
+    if (dropDown.getAttribute("mode") == "room") {
+      OneNumText = declension(OneNum, " спальня", " спальни", " спален");
+      TwoNumText = declension(TwoNum, " кровать", " кровати", " кроватей");
+      if (OneNum > 0 && TwoNum > 0) {
+        info.value = OneNumText + ", " + TwoNumText;
+      }
+      else {
+        info.value = OneNumText + TwoNumText;
+      }
+    }
+    else {
+      OneNumText = declension(OneNum + TwoNum, " гость", " гостя", " гостей");
+      TwoNumText = declension(ThreeNum, " младенец", " младенца", " младенцев");
 
-    if (adultsNum + childrenNum > 0 && babiesNum > 0) {
-      info.value = guests + ", " + babiesNums;
-    } else if (adultsNum + childrenNum > 0 || babiesNum > 0) {
-      info.value = guests + babiesNums;
-    } else info.value = "";
+      if (OneNum + TwoNum > 0 && ThreeNum > 0) {
+        info.value = OneNumText + ", " + TwoNumText;
+      } else if (OneNum + TwoNum > 0 || ThreeNum > 0) {
+        info.value = OneNumText + ", " + TwoNumText;
+      } else info.value = "";
+    }
 
+
+    // показывать или скрывать кнопку "очистить"
     let aClear = dropDown.querySelector(".calc-buttons_clear");
-    if (adultsNum + childrenNum + babiesNum > 0) {
+    if (OneNum + TwoNum + ThreeNum > 0) {
       aClear.classList.add("calc-buttons_clear-vis");
     }
-    if (adultsNum + childrenNum + babiesNum == 0) {
+    if (OneNum + TwoNum + ThreeNum == 0) {
       aClear.classList.remove("calc-buttons_clear-vis");
     }
   });
@@ -63,7 +80,7 @@ function dropDownsaysi() {
   dropDowns.forEach(function (dropDown) {
     // калькулятор гостей или комнат (по умолчанию - гости)
     console.log(dropDown);
-    console.log(dropDown.getAttribute("mode") + " ~mode~ " + typeof(dropDown.getAttribute("mode")))
+    console.log(dropDown.getAttribute("mode") + " ~mode~ " + typeof (dropDown.getAttribute("mode")))
     if (dropDown.getAttribute("mode") == "room") {
       // меняем ширину дропдауна
       dropDown.classList.add("dropdown_room");
@@ -80,23 +97,23 @@ function dropDownsaysi() {
 
       let OneTitle = calcItemOne.querySelector(".calc-item__title > span");
       OneTitle.innerHTML = "спальни";
-      let OneName = calcItemOne.querySelector("input");
-      OneName.setAttribute("name", "bedroom");
+      // let OneName = calcItemOne.querySelector("input");
+      // OneName.setAttribute("name", "bedroom");
 
       let TwoTitle = calcItemTwo.querySelector(".calc-item__title > span");
       TwoTitle.innerHTML = "кровати";
-      let TwoName = calcItemTwo.querySelector("input");
-      TwoName.setAttribute("name", "bed");
+      // let TwoName = calcItemTwo.querySelector("input");
+      // TwoName.setAttribute("name", "bed");
 
       let ThreeTitle = calcItemThree.querySelector(".calc-item__title > span");
       ThreeTitle.innerHTML = "ванные комнаты";
-      let ThreeName = calcItemThree.querySelector("input");
-      ThreeName.setAttribute("name", "bathroom");
+      // let ThreeName = calcItemThree.querySelector("input");
+      // ThreeName.setAttribute("name", "bathroom");
 
     }
 
     // свернуть или развернуть dropdown
-    console.log(dropDown.getAttribute("show") + " " + typeof(dropDown.getAttribute("show")));
+    console.log(dropDown.getAttribute("show") + " " + typeof (dropDown.getAttribute("show")));
     if (dropDown.getAttribute("show") == "closed") {
       let dropdownCalculator = dropDown.querySelector(".dropdown__calculator");
       dropdownCalculator.classList.toggle("dropdown__calculator_show");

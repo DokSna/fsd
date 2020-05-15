@@ -17,14 +17,15 @@ include ../calc-item/calc-item
 //-         .calc-buttons_submit
 //-           input(type="button", value="применить")
 
-mixin dropdown(show, one, two, three)
-  .dropdown(show=show, one=one, two=two, three=three)
+//-   dropdown(mode="room", show="closed", one=2, two=1, three=3)
+mixin dropdown(mode="guest", show="open", one=0, two=0, three=0)
+  .dropdown(mode=mode, show=show, one=one, two=two, three=three)
     form(action="", name="dropdown" method="get")
       .dropdown__header dropdown
       .dropdown__info
         input(type="text" name="guests" readonly placeholder="Сколько гостей")
         button(type="button")
-          img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз")
+          img(src="assets/blocks/dropdown/expand_more.svg" alt="стрелка вниз" )
       .dropdown__calculator
         +calc-item("adults", "взрослые")
         +calc-item("children", "дети")
@@ -34,3 +35,7 @@ mixin dropdown(show, one, two, three)
             input(type="button" value = "очистить")
           .calc-buttons_submit
             input(type="button", value="применить")
+
+//- mixin att(a=0, b=0)
+//-   p.gg(a=a, b=b)
+//-     a=a

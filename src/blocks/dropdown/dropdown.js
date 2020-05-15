@@ -4,26 +4,25 @@ function declension(number, a1, b2, c5) {
   let text = "";
   let num1 = number % 10;
   let num2 = number % 100;
-  if (
-    (num2 >= 5 && num2 <= 20) ||
-    (num1 >= 5 && num1 <= 9) ||
-    (num1 == 0 && number != 0)
-  ) {
+  if ((num2 >= 5 && num2 <= 20) || (num1 >= 5 && num1 <= 9) || (num1 == 0 && number != 0)) {
     return (text = String(number) + c5);
-  } else if (num1 >= 2 && num1 <= 4) {
+  }
+  else if (num1 >= 2 && num1 <= 4) {
     return (text = String(number) + b2);
-  } else if (num1 == 1) {
+  }
+  else if (num1 == 1) {
     return (text = String(number) + a1);
-  } else return (text = "");
+  }
+  else return (text = "");
 }
 
 // заполняем шапку количеством гостей
 function dropDownsays() {
   let dropDowns = document.querySelectorAll(".dropdown");
-  dropDowns.forEach(function(dropDown) {
+  dropDowns.forEach(function (dropDown) {
     let calcItems = dropDown.querySelectorAll(".calc-item__value");
     let adultsNum, childrenNum, babiesNum;
-    calcItems.forEach(function(calcItem) {
+    calcItems.forEach(function (calcItem) {
       if ("adults" == calcItem.getAttribute("name")) {
         adultsNum = Number(calcItem.value);
       }
@@ -36,18 +35,8 @@ function dropDownsays() {
     });
 
     let info = dropDown.querySelector(".dropdown__info > input");
-    let babiesNums = declension(
-      babiesNum,
-      " младенец",
-      " младенца",
-      " младенцев"
-    );
-    let guests = declension(
-      adultsNum + childrenNum,
-      " гость",
-      " гостя",
-      " гостей"
-    );
+    let babiesNums = declension(babiesNum, " младенец", " младенца", " младенцев");
+    let guests = declension(adultsNum + childrenNum, " гость", " гостя", " гостей");
 
     if (adultsNum + childrenNum > 0 && babiesNum > 0) {
       info.value = guests + ", " + babiesNums;
@@ -68,11 +57,47 @@ function dropDownsays() {
 document.addEventListener("DOMContentLoaded", dropDownsays());
 document.addEventListener("DOMContentLoaded", dropDownsaysi());
 
+// сдесь мы вносим изменения в стандартную модель дропдауна
 function dropDownsaysi() {
   let dropDowns = document.querySelectorAll(".dropdown");
-  dropDowns.forEach(function(dropDown) {
+  dropDowns.forEach(function (dropDown) {
+    // калькулятор гостей или комнат (по умолчанию - гости)
+    console.log(dropDown);
+    console.log(dropDown.getAttribute("mode") + " ~mode~ " + typeof(dropDown.getAttribute("mode")))
+    if (dropDown.getAttribute("mode") == "room") {
+      // меняем ширину дропдауна
+      dropDown.classList.add("dropdown_room");
+      let calcWidth = dropDown.querySelector(".dropdown__calculator");
+      calcWidth.classList.add("dropdown_room");
+      // меняем надпись placeholder
+      let infoInput = dropDown.querySelector(".dropdown__info > input");
+      infoInput.setAttribute("placeholder", "Сколько спален, кроватей...");
+      // меняем названия калькуриуемых строк в дропдауне (с гостей на => спальни и кровати)
+      let calcItems = dropDown.querySelectorAll(".calc-item");
+      let calcItemOne = calcItems[0];
+      let calcItemTwo = calcItems[1];
+      let calcItemThree = calcItems[2];
+
+      let OneTitle = calcItemOne.querySelector(".calc-item__title > span");
+      OneTitle.innerHTML = "спальни";
+      let OneName = calcItemOne.querySelector("input");
+      OneName.setAttribute("name", "bedroom");
+
+      let TwoTitle = calcItemTwo.querySelector(".calc-item__title > span");
+      TwoTitle.innerHTML = "кровати";
+      let TwoName = calcItemTwo.querySelector("input");
+      TwoName.setAttribute("name", "bed");
+
+      let ThreeTitle = calcItemThree.querySelector(".calc-item__title > span");
+      ThreeTitle.innerHTML = "ванные комнаты";
+      let ThreeName = calcItemThree.querySelector("input");
+      ThreeName.setAttribute("name", "bathroom");
+
+    }
+
     // свернуть или развернуть dropdown
-    if (dropDown.getAttribute("show") == 1) {
+    console.log(dropDown.getAttribute("show") + " " + typeof(dropDown.getAttribute("show")));
+    if (dropDown.getAttribute("show") == "closed") {
       let dropdownCalculator = dropDown.querySelector(".dropdown__calculator");
       dropdownCalculator.classList.toggle("dropdown__calculator_show");
       let inf = dropDown.querySelector('.dropdown__info');
@@ -82,19 +107,19 @@ function dropDownsaysi() {
     let one = Number(dropDown.getAttribute("one"));
     let two = Number(dropDown.getAttribute("two"));
     let three = Number(dropDown.getAttribute("three"));
-      let Calculator = dropDown.querySelectorAll('.calc-item__wrapper');
-      if (one > 0) {
-        let calcItemInput = Calculator[0].querySelector('input');
-        calcItemInput.value = one;
-      }
-      if (two > 0) {
-        let calcItemInput = Calculator[1].querySelector('input');
-        calcItemInput.value = two;
-      }
-      if (three > 0) {
-        let calcItemInput = Calculator[2].querySelector('input');
-        calcItemInput.value = three;
-      }
+    let Calculator = dropDown.querySelectorAll('.calc-item__wrapper');
+    if (one > 0) {
+      let calcItemInput = Calculator[0].querySelector('input');
+      calcItemInput.value = one;
+    }
+    if (two > 0) {
+      let calcItemInput = Calculator[1].querySelector('input');
+      calcItemInput.value = two;
+    }
+    if (three > 0) {
+      let calcItemInput = Calculator[2].querySelector('input');
+      calcItemInput.value = three;
+    }
   });
   dropDownsays();
 }
@@ -141,3 +166,12 @@ function funShowCalc(e) {
   let calc = inf.nextElementSibling;
   calc.classList.toggle("dropdown__calculator_show");
 }
+
+// let ico = document.querySelector('.gg');
+// console.log(ico);
+// let icoAtt = ico.getAttribute('a');
+// console.log(icoAtt);
+// console.log(typeof (icoAtt));
+// let icoAttb = ico.getAttribute('b');
+// console.log(icoAttb);
+// console.log(typeof Number(icoAttb))

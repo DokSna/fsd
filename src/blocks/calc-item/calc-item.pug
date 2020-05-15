@@ -8,7 +8,7 @@
 mixin calc-item(name, text)
   .calc-item
     .calc-item__title
-      text=text
+      span=text
     .calc-item__wrapper
       button.calc-item__operator(type='button') -
       input.raz.calc-item__value(type='number', name = name, min='0', max='999', value='0')

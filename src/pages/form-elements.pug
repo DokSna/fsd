@@ -16,17 +16,17 @@ block content
     .form
       include ../blocks/text-field/text-field
       include ../blocks/text-field_focus/text-field_focus
-      //- +dropdown(1)
+      +dropdown("", "closed")
     .form 2
     .form 3
     .form
       .drop_zindex
-        +dropdown(1)
-      +dropdown()
+        +dropdown("room","closed")
+      +dropdown("room")
     .form
-      +dropdown()
+      +dropdown
     .form
-      +dropdown(0,2,1)
+      +dropdown("", "", 2, 1)
     .form 7
     .form 8
     .form 9

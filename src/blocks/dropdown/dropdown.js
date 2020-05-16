@@ -38,15 +38,27 @@ function dropDownsays() {
     let info = dropDown.querySelector(".dropdown__info > input");
     let OneNumText = "";
     let TwoNumText = "";
+    let ThreeNumText = "";
+    let infoText = "";
     if (dropDown.getAttribute("mode") == "room") {
       OneNumText = declension(OneNum, " спальня", " спальни", " спален");
       TwoNumText = declension(TwoNum, " кровать", " кровати", " кроватей");
+      ThreeNumText = declension(ThreeNum, " ванная комната", " ванные комнаты", " ванных комнат");
+
+      infoText += OneNumText;
       if (OneNum > 0 && TwoNum > 0) {
-        info.value = OneNumText + ", " + TwoNumText;
+        infoText += ", ";
       }
-      else {
-        info.value = OneNumText + TwoNumText;
+      infoText += TwoNumText;
+
+      // if (OneNum + TwoNum > 0 && ThreeNum > 0) {
+      if (OneNum > 0 && TwoNum > 0) {
+        // infoText += ", ";
+        infoText += "...";
       }
+      // infoText += ThreeNumText;
+
+      info.value = infoText;
     }
     else {
       OneNumText = declension(OneNum + TwoNum, " гость", " гостя", " гостей");
@@ -55,7 +67,7 @@ function dropDownsays() {
       if (OneNum + TwoNum > 0 && ThreeNum > 0) {
         info.value = OneNumText + ", " + TwoNumText;
       } else if (OneNum + TwoNum > 0 || ThreeNum > 0) {
-        info.value = OneNumText + ", " + TwoNumText;
+        info.value = OneNumText + TwoNumText;
       } else info.value = "";
     }
 
@@ -73,6 +85,7 @@ function dropDownsays() {
 
 document.addEventListener("DOMContentLoaded", dropDownsays());
 document.addEventListener("DOMContentLoaded", dropDownsaysi());
+document.addEventListener("DOMContentLoaded", frash());
 
 // сдесь мы вносим изменения в стандартную модель дропдауна
 function dropDownsaysi() {
@@ -82,6 +95,14 @@ function dropDownsaysi() {
     console.log(dropDown);
     console.log(dropDown.getAttribute("mode") + " ~mode~ " + typeof (dropDown.getAttribute("mode")))
     if (dropDown.getAttribute("mode") == "room") {
+      if (dropDown.getAttribute("show") !== "closed") {
+        let dropDownHeader = dropDown.querySelector(".dropdown__header");
+        dropDownHeader.innerHTML = "dropdown <span>expanded</span>";
+      }
+
+      // убираем кнопки "очистить" и "применить"
+      let calcButtons = dropDown.querySelector(".calc-buttons");
+      calcButtons.classList.add("dropdown_room-hidden");
       // меняем ширину дропдауна
       dropDown.classList.add("dropdown_room");
       let calcWidth = dropDown.querySelector(".dropdown__calculator");
@@ -109,16 +130,20 @@ function dropDownsaysi() {
       ThreeTitle.innerHTML = "ванные комнаты";
       // let ThreeName = calcItemThree.querySelector("input");
       // ThreeName.setAttribute("name", "bathroom");
-
     }
 
     // свернуть или развернуть dropdown
     console.log(dropDown.getAttribute("show") + " " + typeof (dropDown.getAttribute("show")));
     if (dropDown.getAttribute("show") == "closed") {
+      let dropDownHeader = dropDown.querySelector(".dropdown__header");
+      dropDownHeader.innerHTML = "dropdown <span>default</span>";
+
       let dropdownCalculator = dropDown.querySelector(".dropdown__calculator");
       dropdownCalculator.classList.toggle("dropdown__calculator_show");
-      let inf = dropDown.querySelector('.dropdown__info');
-      inf.classList.toggle("dropdown__info_border");
+      if (dropDown.getAttribute("mode") !== "room") {
+        let inf = dropDown.querySelector('.dropdown__info');
+        inf.classList.toggle("dropdown__info_border");
+      }
     }
     // заранее заполненые поля
     let one = Number(dropDown.getAttribute("one"));
@@ -178,7 +203,10 @@ showCalc.forEach((el) => el.addEventListener("click", funShowCalc));
 
 function funShowCalc(e) {
   let inf = this.parentElement;
-  inf.classList.toggle("dropdown__info_border");
+  let dropDown = inf.parentElement.parentElement;
+  if (dropDown.getAttribute("mode") !== "room") {
+    inf.classList.toggle("dropdown__info_border");
+  }
 
   let calc = inf.nextElementSibling;
   calc.classList.toggle("dropdown__calculator_show");

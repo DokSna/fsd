@@ -1,6 +1,15 @@
-.text-field
-  label
-    .text-field_header Text Field
-    .text-field_description Default
-    .text-field_input
-      input(type="text" name="email" placeholder="Email" value="")
+//- .text-field
+//-   label
+//-     .text-field_header Text Field
+//-     .text-field_description Default
+//-     .text-field_input
+//-       input(type="text" name="email" placeholder="Email" value="")
+
+mixin textfield(name, placeholder)
+  .text-field
+    label
+      .text-field_header
+        span=name
+      .text-field_description Default
+      .text-field_input
+        input(type="text" name="email" placeholder=placeholder value="")

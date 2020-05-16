@@ -9,14 +9,19 @@ block variables
   - var pageClass = "pageClass_FormElements";
 
 include ../blocks/dropdown/dropdown
+include ../blocks/text-field/text-field
 block head
 
 block content
   .wrapper.screenWidth-1160
     .form
-      include ../blocks/text-field/text-field
+      //- include ../blocks/text-field/text-field
+      +textfield("text field", "Email")
       include ../blocks/text-field_focus/text-field_focus
-      +dropdown("", "closed")
+      .drop_zindex
+        +dropdown("", "closed")
+      +textfield("masked text field", "ДД.ММ.ГГГГ")
+
     .form 2
     .form 3
     .form

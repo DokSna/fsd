@@ -71,7 +71,6 @@ function dropDownsays() {
       } else info.value = "";
     }
 
-
     // показывать или скрывать кнопку "очистить"
     let aClear = dropDown.querySelector(".calc-buttons_clear");
     if (OneNum + TwoNum + ThreeNum > 0) {
@@ -92,8 +91,6 @@ function dropDownsaysi() {
   let dropDowns = document.querySelectorAll(".dropdown");
   dropDowns.forEach(function (dropDown) {
     // калькулятор гостей или комнат (по умолчанию - гости)
-    console.log(dropDown);
-    console.log(dropDown.getAttribute("mode") + " ~mode~ " + typeof (dropDown.getAttribute("mode")))
     if (dropDown.getAttribute("mode") == "room") {
       if (dropDown.getAttribute("show") !== "closed") {
         let dropDownHeader = dropDown.querySelector(".dropdown__header");
@@ -133,7 +130,6 @@ function dropDownsaysi() {
     }
 
     // свернуть или развернуть dropdown
-    console.log(dropDown.getAttribute("show") + " " + typeof (dropDown.getAttribute("show")));
     if (dropDown.getAttribute("show") == "closed") {
       let dropDownHeader = dropDown.querySelector(".dropdown__header");
       dropDownHeader.innerHTML = "dropdown <span>default</span>";
@@ -211,12 +207,3 @@ function funShowCalc(e) {
   let calc = inf.nextElementSibling;
   calc.classList.toggle("dropdown__calculator_show");
 }
-
-// let ico = document.querySelector('.gg');
-// console.log(ico);
-// let icoAtt = ico.getAttribute('a');
-// console.log(icoAtt);
-// console.log(typeof (icoAtt));
-// let icoAttb = ico.getAttribute('b');
-// console.log(icoAttb);
-// console.log(typeof Number(icoAttb))

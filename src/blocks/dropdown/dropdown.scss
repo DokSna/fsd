@@ -123,7 +123,6 @@
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
     text-transform: uppercase;
     color: rgba(31, 32, 65, 0.5);
     padding: 0;
@@ -138,7 +137,6 @@
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    /* identical to box height */
     text-transform: uppercase;
     /* Primary Color */
     color: #bc9cff;
@@ -148,9 +146,6 @@
 .dropdown_room {
   width: 266px;
   height: 119px;
-  // &__calculator {
-  //   width: 320px;
-  // }
 }
 .dropdown_room-hidden {
   display: none;

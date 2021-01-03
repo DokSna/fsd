@@ -19,6 +19,10 @@ block content
     include ../blocks/subscription/subscription
     include ../blocks/dropdown/dropdown
     include ../blocks/dropdown/dropdown
-    +dropdown(1)
-    +dropdown()
+    +dropdown("", "closed")
+    +dropdown("", "closed")
     h2(onclick="console.log(4)") Привет
+    include ../blocks/dropdown-date/dropdown-date
+    input(type="date")
+    +dropdown-date
+    +dropdown-date("2019-08-19")

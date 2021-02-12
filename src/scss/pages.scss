@@ -29,10 +29,20 @@
   }
   .form {
     padding-left: 1px;
+    .wrap_element-1 {
+      padding-top: 8px;
+    }
+    .wrap_element-2 {
+      padding-top: 12px;
+    }
+    .wrap_element-3 {
+      padding-top: 15px;
+    }
   }
   .wrapper:first-child > .form {
     display: grid;
-    grid-template-rows: repeat(4, 87px);
+    grid-template-rows: repeat(4, 80px);
+    // grid-template-rows: repeat(4, 87px);
     // grid-row-g
   }
   // .form {

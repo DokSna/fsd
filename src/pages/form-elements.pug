@@ -17,10 +17,12 @@ block content
     .form
       //- include ../blocks/text-field/text-field
       +textfield("text field", "Email")
-      include ../blocks/text-field_focus/text-field_focus
-      .drop_zindex
+      .wrap_element-1
+        include ../blocks/text-field_focus/text-field_focus
+      .drop_zindex.wrap_element-2
         +dropdown("", "closed")
-      +textfield("masked text field", "ДД.ММ.ГГГГ")
+      .wrap_element-3
+        +textfield("masked text field", "ДД.ММ.ГГГГ")
 
     .form 2
     .form 3

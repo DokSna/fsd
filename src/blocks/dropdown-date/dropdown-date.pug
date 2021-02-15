@@ -5,9 +5,10 @@
 //-     button(type="button")
 //-       img(src="assets/blocks/dropdown-date/expand_more.svg" alt="стрелка вниз")
 
-mixin dropdown-date(date)
+mixin dropdown-date(date, titleText = 'date Dropdown')
   .dropdown-date
-    .dropdown-date__header date Dropdown
+    .dropdown-date__header
+      titleText=titleText
     .dropdown-date__info
       input(type="date" name="date" value=date)
       button(type="button")

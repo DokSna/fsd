@@ -24,9 +24,9 @@
 mixin item-type(blockNumber, blockText, textNumber, textText)
   .type
     div(class!=attributes.blockNumber).type__block.type_left-column
-      blockText=blockText
+      span=blockText
     div(class!=attributes.textNumber).type_right-column
-      textText=textText
+      span=textText
 
 //- -----------------------------------
 //- .type

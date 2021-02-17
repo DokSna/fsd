@@ -10,9 +10,9 @@ mixin item-colors(color, descr, value)
 mixin item-type(blockNumber, blockText, textNumber, textText)
   .type
     div(class!=attributes.blockNumber).type__block.type_left-column
-      blockText=blockText
+      span=blockText
     div(class!=attributes.textNumber).type_right-column
-      textText=textText
+      span=textText
 
 //- blocks/links
 mixin column-links(name1, url1, name2, url2, name3, url3, name4, url4, name5, url5)

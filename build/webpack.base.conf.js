@@ -1,15 +1,17 @@
-const path = require("path")
-const fs = require("fs");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CopyWebpackPlugin = require("copy-webpack-plugin")
-const HtmlWebpackPlugin = require("html-webpack-plugin")
-const { VueLoaderPlugin } = require("vue-loader")  //VueLoaderPlugin поместили в объект {}, 
+const path = require('path');
+const fs = require('fs');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader'); //VueLoaderPlugin поместили в объект {},
 //возможно в будущем пригодится ещё какойнибудь плагин из "vue-loader"
 
+const webpack = require('webpack');
+
 const PATHS = {
-  src: path.join(__dirname, "../src"),
-  dist: path.join(__dirname, "../dist"),
-  assets: "assets/"
+  src: path.join(__dirname, '../src'),
+  dist: path.join(__dirname, '../dist'),
+  assets: 'assets/',
 };
 
 // Pages const for HtmlWebpackPlugin
@@ -19,13 +21,15 @@ const PATHS = {
 // const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".html"));
 
 // const PAGES_DIR = `${PATHS.src}/pug/pages/`  //было
-const PAGES_DIR = `${PATHS.src}/pages/`                //стало
-const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith(".pug"));
+const PAGES_DIR = `${PATHS.src}/pages/`; //стало
+const PAGES = fs
+  .readdirSync(PAGES_DIR)
+  .filter((fileName) => fileName.endsWith('.pug'));
 
 module.exports = {
-
-  externals: {    //с помощью externals, для PATHS создаём ярлык paths,
-    paths: PATHS  //что бы обращаться к нему в других конфигах можно было.
+  externals: {
+    //с помощью externals, для PATHS создаём ярлык paths,
+    paths: PATHS, //что бы обращаться к нему в других конфигах можно было.
   },
 
   entry: {
@@ -35,7 +39,7 @@ module.exports = {
   },
 
   output: {
-    filename: `${PATHS.assets}js/[name].js`,      //без хеша
+    filename: `${PATHS.assets}js/[name].js`, //без хеша
     // filename: `${PATHS.assets}js/[name].[hash].js`,  //c хешем
     path: PATHS.dist,
     // publicPath: "/"    //26-03-2020
@@ -48,110 +52,126 @@ module.exports = {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          name: "vendors",
+          name: 'vendors',
           test: /node_modules/,
-          chunks: "all",
-          enforce: true
-        }
-      }
-    }
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
 
   module: {
     rules: [
       {
         test: /\.pug$/,
-        loader: "pug-loader",
+        loader: 'pug-loader',
       },
       {
         test: /\.js$/,
-        loader: "babel-loader",
-        exclude: "/node_modules/"
-      }, {
+        loader: 'babel-loader',
+        exclude: '/node_modules/',
+      },
+      {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "fonts/[name].[ext]",
-          outputPath: "assets/"
-        }
+          name: 'fonts/[name].[ext]',
+          outputPath: 'assets/',
+        },
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         exclude: [/fonts/],
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "[name].[ext]",
-        }
+          name: '[name].[ext]',
+        },
       },
       {
         test: /\.scss$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
-            options: { sourceMap: true }
-          }, {
-            loader: "postcss-loader",
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-          }, {
-            loader: "sass-loader",
-            options: { sourceMap: true }
-          }
-        ]
-      }, {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
         use: [
-          "style-loader",
+          'style-loader',
           MiniCssExtractPlugin.loader,
           {
-            loader: "css-loader",
-            options: { sourceMap: true }
-          }, {
-            loader: "postcss-loader",
-            options: { sourceMap: true, config: { path: `./postcss.config.js` } }
-          }
-        ]
-      }, {
+            loader: 'css-loader',
+            options: { sourceMap: true },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true,
+              config: { path: `./postcss.config.js` },
+            },
+          },
+        ],
+      },
+      {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: 'vue-loader',
         options: {
           loader: {
-            scss: "vue-style-loader!css-loader!sass-loader"
-          }
-        }
+            scss: 'vue-style-loader!css-loader!sass-loader',
+          },
+        },
       },
-    ]
+    ],
   },
 
-  // resolve: {
-  //   alias: {
-  //     // "~": "src",  //создание алиаса, пример его использования в Example.vue
-  //     // "~": PAGES_DIR,  //корень src
-  //     // "vue$": "vue/dist/vue.js"
-  //   }
-  // },
+  resolve: {
+    alias: {
+      // "~": "src",  //создание алиаса, пример его использования в Example.vue
+      // "~": PAGES_DIR,  //корень src
+      vue$: 'vue/dist/vue.js',
+    },
+  },
 
   plugins: [
     new VueLoaderPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.$': 'jquery',
+      'window.jQuery': 'jquery',
+    }),
     new MiniCssExtractPlugin({
-      filename: "[name].css",      //без хеша
+      filename: '[name].css', //без хеша
       // filename: `${PATHS.assets}css/[name].[hash].css`,  //с хешем
     }),
 
-
     // ignore: ["*.pug", "*.scss", "*.js", "static/*"],
-
 
     new CopyWebpackPlugin([
       {
         from: `${PATHS.src}`,
         to: `${PATHS.assets}`,
-        ignore: ["*.pug", "*.scss", "*.js", "static/**/*", "fonts/**/*"],
+        ignore: ['*.pug', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],
       },
       {
         from: `${PATHS.src}/static`,
-        to: ""
+        to: '',
       },
 
       // {
@@ -195,12 +215,12 @@ module.exports = {
       https://github.com/vedees/webpack-template/blob/master/README.md#third-method-best
     */
     ...PAGES.map(
-      page =>
+      (page) =>
         new HtmlWebpackPlugin({
           // template: `${PAGES_DIR}`,
           template: `${PAGES_DIR}/${page}`,
           // filename: `./${page}`
-          filename: `./${page.replace(/\.pug/, ".html")}`  //эта строчка ищет файлы *pug и "реплейсит" их в *.html
+          filename: `./${page.replace(/\.pug/, '.html')}`, //эта строчка ищет файлы *pug и "реплейсит" их в *.html
         })
     ),
 
@@ -221,4 +241,4 @@ module.exports = {
     // //   inject: true
     // // })
   ],
-}
+};

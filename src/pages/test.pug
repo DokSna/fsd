@@ -1,6 +1,9 @@
 extends ../basis/layout/main
-include ../blocks/dropdown/dropdown
+//- include ../blocks/dropdown/dropdown
 block head
+
+  //- <link href="css/datepicker.min.css" rel="stylesheet" type="text/css">
+  //- <script src="js/datepicker.min.js"></script>
 
   //- script(type='text/html' src="../lib/jquery-3.5.0.js").
   //- script(type='text/javascript').
@@ -28,4 +31,5 @@ block content
     img(src="assets/blocks/dropdown-date/Form Elements_type-Date.png", alt="Пример календаря" title="Пример календаря")
     +dropdown-date()
     +dropdown-date("2019-08-19")
-    
+    include ../blocks/arrow/arrow
+    include ../blocks/air-datepicker/air-datepicker

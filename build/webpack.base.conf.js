@@ -1,12 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader'); //VueLoaderPlugin поместили в объект {},
 //возможно в будущем пригодится ещё какойнибудь плагин из "vue-loader"
-
-const webpack = require('webpack');
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -149,13 +148,13 @@ module.exports = {
   },
 
   plugins: [
-    new VueLoaderPlugin(),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
       'window.$': 'jquery',
       'window.jQuery': 'jquery',
     }),
+    new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css', //без хеша
       // filename: `${PATHS.assets}css/[name].[hash].css`,  //с хешем
@@ -167,7 +166,8 @@ module.exports = {
       {
         from: `${PATHS.src}`,
         to: `${PATHS.assets}`,
-        ignore: ['*.pug', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],
+        // ignore: ['*.pug', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],  //до
+        ignore: ['*.pug', '*.css', '*.scss', '*.js', 'static/**/*', 'fonts/**/*'],     //после - добавил '*.css'
       },
       {
         from: `${PATHS.src}/static`,

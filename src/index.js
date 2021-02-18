@@ -1,10 +1,11 @@
-import './main.scss';
-// import './lib/jquery-3.5.0';
 import 'jquery';
 import 'jquery.maskedinput';
+import 'air-datepicker';
+import './main.scss';
 import './basis/common';
 import './blocks/calc-item/calc-item';
 import './blocks/dropdown/dropdown';
+
 // import './blocks/dropdown-date/dropdown-date';
 
 // // Проверка "работает ли jQuery"
